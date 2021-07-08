@@ -3,7 +3,8 @@ node_js:
   - "node"
 notifications:
   email: false
+# safelist
 branches:
   only:
-  - main
-  - feature/travis-ci
+    - main
+    - feature/travis-ci
