@@ -6,5 +6,4 @@ notifications:
 # safelist
 branches:
   only:
-  - main
   - feature/travis-ci
