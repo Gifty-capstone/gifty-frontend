@@ -10,5 +10,7 @@ branches:
 deploy:
   api_key:
     secure: k1cUR0FzjhKlmd4PSjXzEva1CAgm5SezpKAxOAusNDLFBTMJBYxE2pMpBxv3v4Too7rbjr0Yp8O4rSvYZ8OJgSjAYhA21f1OamK7/9Qui7V9dNNlCaIAmbLGZj5Snjl5WL3+749eFg6G6uxOzWJxnXigFZwZrKGmYvhfeXWTF/gJBvP+h0F7kCiV0Stjy7COjkXDammQG4MnCNH2Y1PRUx6tnK1FpY0R2hzl8EqcLWPBaGQrnwK+h1Mu8eyT5Q1wrCQltbz+0pjSxqnhtVNkYewKVyiXvuy56m2ifMVyg4LF6MeTdRdqwYzjQwRf5mAWoOgAq3D3Yb/bKFlVgWz8FiNSO/J/GA7+5QsA91+UO2Jl+1wJI2CHx1mYIXlCqiacmWNKsUxg7Xd+CM65EMuNy2qAWWRKbl8xqLF/q1Fpo+7at9nkeDflOSfu6OY635vZg1vy3MIq36zv4bJly7U27UczqwbKWe3MVtJSIW/U1nzEze3iB3c7Du2ChazjBQCTJTfIE7OKZO3nOdNTQXrF1gCsyqHZxO24cqjqQ3Kanh5xLVx8/FU/eBaJ1QFkW1vOU85w+ApaSO8sY2CNM18NUUr9LTiYYrgCdfGQmmmHJhg2P3GVIiJU0xrDNQ04pVaISfhPwIt5rcbCA0n1yh9O9QnpNp6vMXFSS7Zuw2JEAdo=
-    app: gifty-capstone
-    skip_cleanup: true
+  app: gifty-capstone
+  skip_cleanup: true
+  on:
+    branch: main
