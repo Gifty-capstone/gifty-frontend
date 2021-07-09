@@ -7,10 +7,3 @@ branches:
   only:
   - main
   - feature/travis-ci
-deploy:
-  provider: heroku
-  api_key: 39757b76-cb08-4775-ab93-61c41dd4e9ad
-  app: gifty-capstone
-  skip_cleanup: true
-  on:
-    branch: main
