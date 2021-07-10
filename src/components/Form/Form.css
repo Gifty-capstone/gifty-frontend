@@ -5,7 +5,7 @@
   font-family: Arial, sans-serif;
 }
 
-.form-container {
+.form-background {
   background: rgb(0, 0, 0, 0.8);
   /* position: fixed; */
   display: flex;
@@ -18,4 +18,22 @@
   /* position: relative; */
   /* z-index: 10; */
   border-radius: 10px;
+}
+
+.form-button {
+  padding: 10px 24px;
+  background: #141414;
+  color: #fff;
+  border: none;
+}
+
+.close-form {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
 }
