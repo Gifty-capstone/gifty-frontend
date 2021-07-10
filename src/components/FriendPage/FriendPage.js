@@ -20,6 +20,10 @@ const FriendPage = ({ id }) => {
         <h2>{friend.birthday}</h2>
         <p>{friend.memo}</p>
       </header>
+      <section className='addAGift'>
+        <i className='fas fa-plus fa-3x'></i>
+        <h3>Add a gift idea</h3>
+      </section>
 
     </main>
   )
