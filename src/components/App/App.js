@@ -7,6 +7,7 @@ import Friends from '../Friends/Friends';
 import Header from '../Header/Header';
 import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
 import { mockData } from '../../mockData';
+import FriendPage from '../FriendPage/FriendPage';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,9 @@ const App = () => {
       <Header user={user} />
       <UpcomingBirthdays />
       <AddFriend />
-      <Friends />
+      <Friends /> 
+      {/* Friend page rendered using router path */}
+      <FriendPage />
     </main>
   )
 }

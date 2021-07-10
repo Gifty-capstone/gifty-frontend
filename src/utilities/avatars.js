@@ -42,6 +42,8 @@ export const getIcon = (id) => {
     case '9':
       icon = rhinoceros
       break
+    default:
+      icon = rhinoceros
   }
   return icon
 }
