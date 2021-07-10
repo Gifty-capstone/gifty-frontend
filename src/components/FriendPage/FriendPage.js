@@ -8,15 +8,19 @@ const FriendPage = ({ id }) => {
   const [friend, setFriend] = useState({})
 
   useEffect(() => {
-    setFriend(friends.find(friend => friend.id === id))
+    console.log(friends)
+    setFriend(friends.find(friend => parseInt(friend.id) === id))
   }, [friends])
 
   return (
     <main className='friendGiftPage'>
       <header>
-        {console.log(id)}
         <img src={getIcon(id)}></img>
+        <h1>{friend.name}</h1>
+        <h2>{friend.birthday}</h2>
+        <p>{friend.memo}</p>
       </header>
+
     </main>
   )
 }
