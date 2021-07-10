@@ -8,7 +8,7 @@ const UpcomingBirthdays = () => {
     const monthFromToday = new Date(today.getTime() + 30*24*60*60*1000);
     const currentDate = today.toISOString().split('T')[0];
     const currentMonthFromToday = monthFromToday.toISOString().split('T')[0];
-    return friend.birthday > currentDate && friend.birthday < currentMonthFromToday && friend.gift === 'pending '
+    return friend.birthday > currentDate && friend.birthday < currentMonthFromToday
   });
   const sortedBirthdays = upcomingBirthdays.sort((a, b) => new Date(a.birthday) - new Date(b.birthday))
   const relevantBirthdays = sortedBirthdays.map(friend => {
@@ -25,7 +25,7 @@ const UpcomingBirthdays = () => {
   })
 
   return (
-    <section>
+    <section className='birthdayArea'>
       {relevantBirthdays}
     </section>
   )
