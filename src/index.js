@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 // Provider connects global state/store to our entire app
 import { BrowserRouter } from 'react-router-dom';
 
-//all reducers is the combined reducers, if we end up having only one we can replace allReducers with friendReducer
+//allReducers is the combined reducers, if we end up having only one we can replace allReducers with friendReducer
 //the second parameter is the chrome extension to view redux/store in dev tools 
 const store = createStore (allReducers, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
