@@ -25,7 +25,7 @@ const App = () => {
       <AddFriend />
       <Friends /> 
       {/* Friend page rendered using router path */}
-      <FriendPage />
+      <FriendPage id={3211}/>
     </main>
   )
 }
