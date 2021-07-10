@@ -3,7 +3,7 @@ import './AddFriend.css'
 
 const AddFriend = () => {
   return (
-    <h1>hi</h1>
+    <p>test</p>
   )
 }
 
