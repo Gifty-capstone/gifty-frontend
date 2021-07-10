@@ -9,7 +9,10 @@ const FriendPage = ({ id }) => {
   const [showForm, setForm] = useState(false)
 
   useEffect(() => {
-    setFriend(friends.find(friend => parseInt(friend.id) === id))
+    const selectedFriend = friends.find(friend => parseInt(friend.id) === id)
+    if (selectedFriend) {
+    setFriend(selectedFriend)
+    }
   }, [friends, id])
 
   const displayForm = () => {
