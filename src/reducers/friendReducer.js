@@ -1,4 +1,4 @@
-export const friendReducer = (state = [], action) => {
+const friendReducer = (state = [], action) => {
   switch(action.type) {
     case 'ADD_FRIEND':
       return [...state, ...action.payload.friend];
@@ -12,3 +12,5 @@ export const friendReducer = (state = [], action) => {
       return state;
   }
 }
+
+export default friendReducer;
