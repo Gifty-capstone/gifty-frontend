@@ -1,7 +1,7 @@
 import './UpcomingBirthdays.css';
 
 const UpcomingBirthdays = () => {
-  return(
+  return (
     <p>test</p>
   )
 }

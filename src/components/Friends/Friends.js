@@ -1,7 +1,7 @@
 import './Friends.css'
 
 const Friends = () => {
-  return(
+  return (
     <p>test</p>
   )
 }
