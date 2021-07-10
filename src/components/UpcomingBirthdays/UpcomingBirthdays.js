@@ -26,6 +26,7 @@ const UpcomingBirthdays = () => {
 
   return (
     <section className='birthdayArea'>
+      <h3>Upcoming Birthdays:</h3>
       {relevantBirthdays}
     </section>
   )
