@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     setUser(mockData.data.attributes);
-    dispatch(addFriend(mockData.data.relationships.friends.data));
+    dispatch(addFriengitd(mockData.data.relationships.friends.data));
   }, [])
 
   return ( 
