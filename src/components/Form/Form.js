@@ -1,17 +1,24 @@
 import './Form.css'
+import { MdClose } from 'react-icons/md';
 
 const Form = ({ showModal, setShowModal }) => {
   return (
-    <section className='form'>
-      {showModal ? 
-        <section className='form-container'>
-          <h1>Add New Friend</h1>
-          <input type='text' className='name' placeholder='Full Name'></input>
-          <input type='date' className='form-date'></input>
-          <button className='form-button'>Submit</button>
+    <>
+      {showModal ? (
+        <section className='form-background'>
+          <section showModal={showModal} className='form-wrapper'>
+            <img src={require('../../assets/otters.jpeg')} alt='otters'></img>
+            <div className='form-content'>
+              <h1>Add New Friend</h1>
+              <input type='text' className='name' placeholder='Full Name'></input>
+              <input type='date' className='form-date'></input>
+              <button className='form-button'>Submit</button>
+            </div>
+            <MdClose aria-label='Close modal' onClick={() => setShowModal(prev => !prev)}/>
+          </section>
         </section> 
-        : null}
-    </section>
+      ) : null}
+    </>
   )
 }
 
