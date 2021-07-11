@@ -1,4 +1,14 @@
+header {
+  position: relative;
+}
+
 .title {
   text-align: center;
-  font-size: xxx-large
+  font-size: xxx-large;
+}
+
+.userName {
+  position: absolute;
+  top: 0;
+  left: 10px;
 }
