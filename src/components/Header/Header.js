@@ -1,8 +1,10 @@
 import './Header.css'
 
-const Header = () => {
+const Header = ({ user }) => {
   return (
-    <h1 className='title'>Gifty</h1>
+    <header>
+      <h1 className='title'>Gifty</h1>
+    </header>
   )
 }
 
