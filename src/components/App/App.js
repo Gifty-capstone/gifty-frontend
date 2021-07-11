@@ -1,7 +1,7 @@
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFriend } from '../../actions';
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import AddFriend from '../AddFriend/AddFriend';
 import Friends from '../Friends/Friends';
 import Header from '../Header/Header';
@@ -10,12 +10,16 @@ import { mockData } from '../../mockData';
 
 const App = () => {
   const dispatch = useDispatch();
+  const [user, setUser] = useState([]);
 
-  useEffect(() => dispatch(addFriend(mockData.data.relationships.friends.data)))
+  useEffect(() => {
+    setUser(mockData.data.attributes);
+    dispatch(addFriend(mockData.data.relationships.friends.data));
+  }, [])
 
   return (
     <main>
-      <Header />
+      <Header user={user} />
       <UpcomingBirthdays />
       <AddFriend />
       <Friends />
