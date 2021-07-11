@@ -14,14 +14,17 @@ const UpcomingBirthdays = () => {
   const relevantBirthdays = sortedBirthdays.map(friend => {
     return (
       <article key={friend.id}>
-        <ul>
-        {friend.gift === 'purchased ' && <i className="fas fa-check">{friend.name}</i> }
-        {friend.gift === 'pending ' && <li>{friend.name}</li>}
+        <ul className='name-area'>
+          {friend.gift === 'purchased ' &&
+          <div className='check-area'>
+            <i className="fas fa-check">{friend.name}</i>
+          </div>}
+          {friend.gift === 'pending ' && <li>{friend.name}</li>}
+        </ul>
           <ul>
             <li>{friend.birthday.split('2021-')[1]}</li>
             <li>{friend.gift}</li>
           </ul>
-        </ul>
       </article>
     )
   })
