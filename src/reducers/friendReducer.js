@@ -4,7 +4,7 @@ const friendReducer = (state = [], action) => {
       return [...state, ...action.payload.friend];
     case 'REMOVE_FRIEND':
       return state.filter(friend => {
-        if (friend.id !== action.payload.id) {
+        if (friend.id !== action.payload.friend.id) {
           return friend;
         }
       })
