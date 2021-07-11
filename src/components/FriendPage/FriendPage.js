@@ -9,6 +9,7 @@ const FriendPage = ({ id }) => {
   const friends = useSelector(state => state.friends)
   const [friend, setFriend] = useState({})
   const [showForm, setForm] = useState(false)
+  const [active, setStatus] = useState(true)
 
   useEffect(() => {
     const selectedFriend = friends.find(friend => parseInt(friend.id) === id)
@@ -26,7 +27,12 @@ const FriendPage = ({ id }) => {
     )
   }
 
-  if (friend) {
+  const deleteFriend = () => {
+    dispatch(removeFriend(friend))
+    setStatus(false)
+  }
+
+  if (friend && active) {
     return (
       <main className='friend-gift-page'>
         <header>
@@ -34,7 +40,7 @@ const FriendPage = ({ id }) => {
           <h1>{friend.name}</h1>
           <h2>{friend.birthday}</h2>
           <p>{friend.memo}</p>
-          <button onClick={() => dispatch(removeFriend(friend))}>Delete {friend.name} from friends</button>
+          <button onClick={() => deleteFriend()}>Delete {friend.name} from friends</button>
         </header>
         <section className='add-a-gift'>
           <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
@@ -43,10 +49,18 @@ const FriendPage = ({ id }) => {
         </section>
       </main>
     )
-    } else {
+    } else if (friend && !active) {
       return (
         <main>
-          <h1>This friend could not be found. Please return to the main dashboard.</h1>
+          <h1>This friend has been successfully deleted. Ouch, hope you're okay.</h1>
+          <button>Return to main</button>
+        </main>
+      )
+    }
+      else {
+      return (
+        <main>
+          <h1>Oh no, this friend could not be found. Please return to the main dashboard and try again.</h1>
           <button>Return to main</button>
         </main>
       )
