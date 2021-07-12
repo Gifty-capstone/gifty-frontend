@@ -8,16 +8,20 @@ import { addFriend } from '../../actions';
 const Form = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
-  
   const [date, setDate] = useState('');
-    const handleChange = (event) => {
-      setName(event.target['name'] = event.target.value);
-      setDate(event.target['date'] = event.target.value);
-    }
+
+  const handleChange = (event) => {
+    setName(event.target['name'] = event.target.value);
+    setDate(event.target['date'] = event.target.value);
+  }
+
+  //Hook for controlled forms
 
   const handleSubmit = () => {
     dispatch(addFriend(name, date));
   }
+
+  // COMBINE NAME/DATE TO PASS AS ONE PARAM
 
   return (
     <>
@@ -38,5 +42,7 @@ const Form = ({ showModal, setShowModal }) => {
     </>
   )
 }
+
+// add prop type checking 
 
 export default Form;
