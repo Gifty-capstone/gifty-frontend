@@ -19,3 +19,5 @@ const AddFriend = () => {
 
 
 export default AddFriend;
+
+// add prop type checking 
