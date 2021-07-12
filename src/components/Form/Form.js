@@ -8,34 +8,24 @@ import { addFriend } from '../../actions';
 
 const Form = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
-  // const [name, setName] = useState('');
-  // const [date, setDate] = useState('');
-
-  const [friend, setFriend] = useState({})
+  const [friend, setFriend] = useState({});
+  //ref is very similar to state, persists between renders of the component, but does not cause the component to reupdate when it gets changed
+  //refs returns an object {current: ''} or whatever you pass as a param
   const inputName = useRef();
   const inputDate = useRef();
   const inputMemo = useRef();
 
   const handleChange = (event) => {
-    // setName(event.target['name'] = event.target.value);
-    // setDate(event.target['date'] = event.target.value);
-
     setFriend({
       birthday: inputDate.current.value,
       name: inputName.current.value,
-      memo: inputDate.current.value
+      memo: inputMemo.current.value
     })
-  }
-
-  //Hook for controlled forms
-  // birthday, name, memo
-
+  };
 
   const handleSubmit = () => {
-    // dispatch(addFriend(name, date));
-    
-    console.log(inputName.current.value)
-    console.log(inputDate.current.value)
+    dispatch(addFriend(friend));
+    console.log(friend)
   }
 
   return (
@@ -51,7 +41,7 @@ const Form = ({ showModal, setShowModal }) => {
               <label className='form-label'>Birthday:</label>
               <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
               <label className='form-label'>Notes:</label>
-              <input type='text' className='form-memo' ref={inputMemo}></input>
+              <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
               <button className='form-button' onClick={handleSubmit}>Submit</button>
             </div>
             <MdClose aria-label='Close modal' className='close-form' onClick={() => setShowModal(prev => !prev)}/>
@@ -61,7 +51,5 @@ const Form = ({ showModal, setShowModal }) => {
     </>
   )
 }
-
-// add prop type checking 
 
 export default Form;
