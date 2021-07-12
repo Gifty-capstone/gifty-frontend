@@ -12,7 +12,7 @@ const FriendPage = ({ id }) => {
   const [active, setStatus] = useState(true)
 
   useEffect(() => {
-    const selectedFriend = friends.find(friend => parseInt(friend.id) === id)
+    const selectedFriend = friends.find(friend => friend.id === id)
     if (selectedFriend) {
     setFriend(selectedFriend)
     }
