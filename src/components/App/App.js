@@ -18,14 +18,14 @@ const App = () => {
     dispatch(addFriend(mockData.data.relationships.friends.data));
   }, [])
 
-  return (
+  return ( 
     <main>
       <Header user={user} />
       <UpcomingBirthdays />
       <AddFriend />
-      <Friends /> 
+      <Friends />
       {/* Friend page rendered using router path */}
-      <FriendPage id={3211}/>
+      {/* <FriendPage id={3211}/> */}
     </main>
   )
 }
