@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
 import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +33,10 @@ const App = () => {
           )
         }} />
 
+        <Route path="/:id" render={({match}) => {
+          const { id } = match.params;
+          return <FriendPage id={id} />
+        }} />
       </Switch>
     </main>
   )
