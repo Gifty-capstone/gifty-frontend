@@ -1,0 +1,6 @@
+.friend {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  border: 1px solid black;
+  cursor: pointer
+}
