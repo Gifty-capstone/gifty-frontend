@@ -4,7 +4,7 @@ import { getIcon } from '../../utilities/avatars';
 
 const Friends = () => {
   const friends = useSelector(state => state.friends)
-  // console.log(friends)
+  console.log(friends)
 
   const friendList = friends.map(friend => {
     return (

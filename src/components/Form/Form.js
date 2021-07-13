@@ -16,11 +16,13 @@ const Form = ({ showModal, setShowModal }) => {
   const inputMemo = useRef();
 
   const handleChange = () => {
-    setFriend({
+    setFriend([{
+      id: '',
       birthday: inputDate.current.value,
       name: inputName.current.value,
-      memo: inputMemo.current.value
-    })
+      memo: inputMemo.current.value,
+      gift: ''
+    }])
   };
 
   const handleSubmit = () => {
