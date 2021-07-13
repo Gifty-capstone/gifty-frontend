@@ -12,10 +12,10 @@ import { Route, Switch } from 'react-router-dom';
 
 const App = () => {
   const dispatch = useDispatch();
-  const [user, setUser] = useState([]);
+  const [userName, setUserName] = useState([]);
 
   useEffect(() => {
-    setUser(mockData.data.attributes);
+    setUserName(mockData.data.attributes.name);
     dispatch(addFriend(mockData.data.relationships.friends.data));
   }, [])
 
@@ -25,7 +25,7 @@ const App = () => {
         <Route exact path="/" render={() => {
           return (
             <React.Fragment>
-              <Header user={user} />
+              <Header userName={userName} />
               <UpcomingBirthdays />
               <AddFriend />
               <Friends />
