@@ -2,7 +2,7 @@ import './Form.css';
 import { useRef } from 'react';
 import otters from '../../assets/otters.png';
 import { MdClose } from 'react-icons/md';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addFriend } from '../../actions';
 
@@ -25,8 +25,8 @@ const Form = ({ showModal, setShowModal }) => {
 
   const handleSubmit = () => {
     dispatch(addFriend(friend));
-    console.log(friend)
-  }
+    Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
+  };
 
   return (
     <>
