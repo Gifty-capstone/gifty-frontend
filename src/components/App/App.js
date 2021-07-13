@@ -8,6 +8,7 @@ import Header from '../Header/Header';
 import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
 import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,14 +19,21 @@ const App = () => {
     dispatch(addFriend(mockData.data.relationships.friends.data));
   }, [])
 
-  return ( 
+  return (
     <main>
-      <Header user={user} />
-      <UpcomingBirthdays />
-      <AddFriend />
-      <Friends />
-      {/* Friend page rendered using router path */}
-      <FriendPage id={'3211'}/>
+      <Switch>
+        <Route exact path="/" render={() => {
+          return (
+            <React.Fragment>
+              <Header user={user} />
+              <UpcomingBirthdays />
+              <AddFriend />
+              <Friends />
+            </React.Fragment>
+          )
+        }} />
+
+      </Switch>
     </main>
   )
 }
