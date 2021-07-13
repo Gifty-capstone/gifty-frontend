@@ -15,7 +15,7 @@ const Form = ({ showModal, setShowModal }) => {
   const inputDate = useRef();
   const inputMemo = useRef();
 
-  const handleChange = (event) => {
+  const handleChange = () => {
     setFriend({
       birthday: inputDate.current.value,
       name: inputName.current.value,
@@ -25,6 +25,7 @@ const Form = ({ showModal, setShowModal }) => {
 
   const handleSubmit = () => {
     dispatch(addFriend(friend));
+    // Turned nodeList into an array 
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
 

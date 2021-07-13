@@ -15,15 +15,15 @@ const App = () => {
 
   useEffect(() => {
     setUser(mockData.data.attributes);
-    dispatch(addFriengitd(mockData.data.relationships.friends.data));
+    dispatch(addFriend(mockData.data.relationships.friends.data));
   }, [])
 
   return ( 
     <main>
       <Header user={user} />
-      {/* <UpcomingBirthdays />
-      <AddFriend />
-      <Friends /> */}
+      <UpcomingBirthdays />
+      {/* <AddFriend /> */}
+      <Friends />
       {/* Friend page rendered using router path */}
       <FriendPage id={'3211'}/>
     </main>
