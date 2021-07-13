@@ -11,7 +11,8 @@ import rhinoceros from '../assets/rhinoceros.png';
 
 export const getIcon = (id) => {
   let icon;
-  switch (id.toString().split('').pop()) {
+  // switch (id.toString().split('').pop()) {
+  switch (id.split('').pop()) {
     case '0':
       icon = bear
       break

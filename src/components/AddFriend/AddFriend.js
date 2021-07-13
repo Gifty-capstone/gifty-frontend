@@ -3,7 +3,7 @@ import './AddFriend.css'
 import Form from '../Form/Form.js'
 
 const AddFriend = () => {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
     //toggling it back and forth
