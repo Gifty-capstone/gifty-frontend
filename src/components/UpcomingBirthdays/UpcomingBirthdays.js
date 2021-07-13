@@ -14,7 +14,7 @@ const UpcomingBirthdays = () => {
   const sortedBirthdays = upcomingBirthdays.sort((a, b) => new Date(a.birthday) - new Date(b.birthday))
   const relevantBirthdays = sortedBirthdays.map(friend => {
     return (
-      <article key={friend.id}>
+      <article key={friend.id} className='upcoming'>
         <ul className='name-area'>
           {friend.gift === 'purchased ' &&
           <div className='check-area'>
