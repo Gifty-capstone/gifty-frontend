@@ -5,6 +5,7 @@ const GiftCard = ({title, image}) => {
     <section>
       <h3>{title}</h3>
       <img src={image}></img>
+      <button>Mark Purchased</button>
     </section>
   )
 }

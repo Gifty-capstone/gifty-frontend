@@ -15,17 +15,21 @@ const GiftList = ({ id }) => {
     console.log(gifts)
   },[giftMockData.data, id]);
 
+    const giftCards = gifts.map(gift => {
+      return (
+        <GiftCard 
+          title={gift.name}
+          img={gift.image}
+          key={gift.title}
+        />
+      )
+    })
+
   return (
-    // const giftCards = gifts.map(gift => {
-    //   return (
-
-    //   )
-    // })
-
     <section className='gift-list'>
-      <h1>test</h1>
+      {giftCards}
     </section>
-  )
+  )  
 }
 
 export default GiftList;
