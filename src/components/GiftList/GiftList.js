@@ -1,6 +1,7 @@
 import './GiftList.css';
 import { giftMockData } from '../../giftMockData';
 import { useEffect, useState } from 'react';
+import GiftCard from '../GiftCard/GiftCard';
 
 const GiftList = ({ id }) => {
   const [gifts, setGifts] = useState([])
@@ -11,10 +12,15 @@ const GiftList = ({ id }) => {
     if (friendGifts) {
       setGifts(friendGifts.gifts)
     };
+    console.log(gifts)
   },[giftMockData.data, id]);
 
   return (
-    // const giftCards = 
+    // const giftCards = gifts.map(gift => {
+    //   return (
+
+    //   )
+    // })
 
     <section className='gift-list'>
       <h1>test</h1>
