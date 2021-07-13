@@ -2,5 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   border: 1px solid black;
-  cursor: pointer
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000
 }

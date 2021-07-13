@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
 import { removeFriend } from '../../actions';
-import { Redirect } from 'react-router-dom';
 
 const FriendPage = ({ id }) => {
   const dispatch = useDispatch()
@@ -36,7 +35,6 @@ const FriendPage = ({ id }) => {
   if (friend && active) {
     return (
       <main className='friend-gift-page'>
-      {!friend.name && <Redirect to='/' />}
         <header>
           <img src={getIcon(id)}></img>
           <h1>{friend.name}</h1>
