@@ -1,5 +1,4 @@
 header {
-  border: solid black 3px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -9,7 +8,6 @@ header {
 }
 
 .title {
-  /* text-align: right; */
   padding-right: 3%;
   font-family: 'Satisfy', cursive;
   font-size: 40px;
@@ -22,8 +20,8 @@ header {
 
 .userName {
   text-align: center;
-  margin-left: 30%;
-  margin-top: 5%;
-  width: 40%;
+  margin-top: 10%;
+  width: 50%;
   font-size: 40px;
+  letter-spacing: .2em;
 }
