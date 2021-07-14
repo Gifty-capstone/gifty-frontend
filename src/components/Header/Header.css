@@ -1,10 +1,19 @@
 header {
-  position: relative;
+  border: solid black 3px;
+  height: 100%;
 }
 
 .title {
-  text-align: center;
+  text-align: right;
+  padding-right: 3%;
+  font-family: 'Satisfy', cursive;
   font-size: xxx-large;
+  color: #eF4823;
+}
+
+img {
+  height: 50px;
+  /* width: 15px; */
 }
 
 .userName {
