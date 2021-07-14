@@ -1,4 +1,5 @@
 import './FriendPage.css';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
@@ -37,13 +38,11 @@ const FriendPage = ({ id }) => {
     setStatus(false)
   }
 
-  if(!friendExist) {
-      return (
-        <Error error={`This page does not exist. Click button to go back to main page.`} />
-      )
-  } else if (friend && active) {
+  if (friend && active) {
     return (
-      <main className='friend-gift-page'>
+      <React.Fragment>
+      {!friendExist && <Error error={`This page does not exist. Click button to go back to main page.`} />}
+      <main className={friendExist ? 'friend-gift-page' : 'hidden'}>
         <header>
           <Link to={'/'}><button>Go back to home page</button></Link>
           <img src={getIcon(id)}></img>
@@ -58,20 +57,13 @@ const FriendPage = ({ id }) => {
           {showForm && displayForm()}
         </section>
       </main>
+      </React.Fragment>
     )
     } else if (friend && !active) {
       return (
         <main>
           <h1>This friend has been successfully deleted. Ouch, hope you're okay.</h1>
-          <button>Return to main</button>
-        </main>
-      )
-    }
-      else {
-      return (
-        <main>
-          <h1>Oh no, this friend could not be found. Please return to the main dashboard and try again.</h1>
-          <button>Return to main</button>
+          <Link to={'/'}><button>Return to main</button></Link>
         </main>
       )
     }
