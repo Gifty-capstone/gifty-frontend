@@ -12,15 +12,13 @@ const GiftList = ({ id }) => {
     if (friendGifts) {
       setGifts(friendGifts.gifts)
     };
-    console.log(gifts)
   },[giftMockData.data, id]);
-
     const giftCards = gifts.map(gift => {
       return (
         <GiftCard 
           title={gift.name}
-          img={gift.image}
-          key={gift.title}
+          image={gift.image}
+          key={gift.id}
         />
       )
     })

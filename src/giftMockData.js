@@ -8,14 +8,17 @@ export const giftMockData = {
       "id": "3211",
       "gifts": [
         {
+          "id": 1,
           "name": "Push Pop Bubble Fidget",
           "image": gift1,
         },
         {
+          "id": 2,
           "name": "Row Machine",
           "image": gift2,
         },
         {
+          "id": 3,
           "name": "Dishwasher Chopstick Basket",
           "image": gift3,
         }
