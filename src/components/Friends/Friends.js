@@ -1,18 +1,16 @@
 import './Friends.css';
 import { useSelector } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
+import { Link } from 'react-router-dom';
 
 const Friends = () => {
   const friends = useSelector(state => state.friends)
-  console.log(friends)
-
   const friendList = friends.map(friend => {
     return (
-      <article className='friend' key={friend.id}>
-        {console.log(friends[1])}
+      <Link to={`/${friend.id}`} className='friend' key={friend.id}>
         <img src={getIcon(friend.id)} alt='friend avatar'></img>
         <h2>{friend.name}</h2>
-      </article>
+      </Link>
     )
   })
 

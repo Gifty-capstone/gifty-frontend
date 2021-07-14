@@ -1,5 +1,6 @@
 import './UpcomingBirthdays.css';
 import { useSelector } from 'react-redux';
+import { FcCheckmark } from 'react-icons/fc';
 
 const UpcomingBirthdays = () => {
   const friends = useSelector(state => state.friends);
@@ -17,13 +18,14 @@ const UpcomingBirthdays = () => {
         <ul className='name-area'>
           {friend.gift === 'purchased ' &&
           <div className='check-area'>
-            <i className="fas fa-check">{friend.name}</i>
+            <FcCheckmark className='check' />
+            <p>{friend.name}</p>
           </div>}
           {friend.gift === 'pending ' && <li>{friend.name}</li>}
         </ul>
           <ul>
             <li>{friend.birthday.split('2021-')[1]}</li>
-            <li>{friend.gift}</li>
+            <li>Gift {friend.gift}</li>
           </ul>
       </article>
     )

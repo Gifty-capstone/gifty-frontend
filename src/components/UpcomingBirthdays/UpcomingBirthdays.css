@@ -12,9 +12,9 @@
 }
 
 .check-area {
-  padding: 5px
+  display: flex
 }
 
-.fa-check {
-  top: 5px;
+.check {
+  font-size: 30px
 }

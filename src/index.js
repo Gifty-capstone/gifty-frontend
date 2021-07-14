@@ -9,13 +9,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 //allReducers is the combined reducers, if we end up having only one we can replace allReducers with friendReducer
-//the second parameter is the chrome extension to view redux/store in dev tools 
-const store = createStore (allReducers, 
+//the second parameter is the chrome extension to view redux/store in dev tools
+const store = createStore (allReducers,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
-  <Provider store={store}>
-      <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+        <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );

@@ -1,7 +1,6 @@
 const friendReducer = (state = [], action) => {
   switch(action.type) {
     case 'ADD_FRIEND':
-      console.log(action.payload.friend)
       return [...state, ...action.payload.friend];
     case 'REMOVE_FRIEND':
       return state.filter(friend => {
