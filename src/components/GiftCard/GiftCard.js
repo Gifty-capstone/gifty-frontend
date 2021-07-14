@@ -1,5 +1,4 @@
 import './GiftCard.css';
-import gift1 from "../../assets/gift1.png";
 
 const GiftCard = ({title, image}) => {
 
