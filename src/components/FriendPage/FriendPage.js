@@ -19,6 +19,7 @@ const FriendPage = ({ id }) => {
     const selectedFriend = friends.find(friend => friend.id === id)
     if (selectedFriend) {
     setFriend(selectedFriend)
+    setFriendExist(true)
   } else {
     setFriendExist(false)
   }
