@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import GiftCard from '../GiftCard/GiftCard';
 
 const GiftList = ({ id }) => {
-  const [gifts, setGifts] = useState([])
+  const [gifts, setGifts] = useState([]);
 
   useEffect(() => {
     const friendGifts = giftMockData.data.find(friend => friend.id === id);
@@ -21,7 +21,7 @@ const GiftList = ({ id }) => {
           key={gift.id}
         />
       )
-    })
+    });
 
   return (
     <section className='gift-list'>

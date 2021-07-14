@@ -23,16 +23,6 @@ const Form = ({ showModal, setShowModal }) => {
   const inputDate = useRef();
   const inputMemo = useRef();
 
-  // const handleChange = () => {
-  //   setFriend([{
-  //     id: '',
-  //     birthday: inputDate.current.value,
-  //     name: inputName.current.value,
-  //     memo: inputMemo.current.value,
-  //     gift: ''
-  //   }])
-  // };
-
   const handleSubmit = () => {
     setFriend([{
       id: '',
@@ -40,10 +30,10 @@ const Form = ({ showModal, setShowModal }) => {
       name: inputName.current.value,
       memo: inputMemo.current.value,
       gift: ''
-    }])
+    }]);
 
     dispatch(addFriend(friend));
-    // Turned nodeList into an array 
+
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
 
