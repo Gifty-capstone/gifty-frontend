@@ -4,6 +4,7 @@ import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
 import { removeFriend } from '../../actions';
 import Error from '../Error/Error';
+import { Link } from 'react-router-dom';
 
 const FriendPage = ({ id }) => {
   const dispatch = useDispatch()
@@ -44,6 +45,7 @@ const FriendPage = ({ id }) => {
     return (
       <main className='friend-gift-page'>
         <header>
+          <Link to={'/'}><button>Go back to home page</button></Link>
           <img src={getIcon(id)}></img>
           <h1>{friend.name}</h1>
           <h2>{friend.birthday}</h2>
