@@ -1,23 +1,29 @@
 header {
   border: solid black 3px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
   height: 100%;
+  width: 100%;
 }
 
 .title {
-  text-align: right;
+  /* text-align: right; */
   padding-right: 3%;
   font-family: 'Satisfy', cursive;
-  font-size: xxx-large;
+  font-size: 40px;
   color: #eF4823;
 }
 
-img {
+.gift {
   height: 50px;
-  /* width: 15px; */
 }
 
 .userName {
-  position: absolute;
-  top: 0;
-  left: 10px;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 5%;
+  width: 40%;
+  font-size: 40px;
 }
