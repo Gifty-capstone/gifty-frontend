@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
 import { removeFriend } from '../../actions';
+import Error from '../Error/Error';
 
 const FriendPage = ({ id }) => {
   const dispatch = useDispatch()
@@ -10,12 +11,15 @@ const FriendPage = ({ id }) => {
   const [friend, setFriend] = useState({})
   const [showForm, setForm] = useState(false)
   const [active, setStatus] = useState(true)
+  const [friendExist, setFriendExist] = useState(true)
 
   useEffect(() => {
     const selectedFriend = friends.find(friend => friend.id === id)
     if (selectedFriend) {
     setFriend(selectedFriend)
-    }
+  } else {
+    setFriendExist(false)
+  }
   }, [friends, id])
 
   const displayForm = () => {
@@ -32,7 +36,11 @@ const FriendPage = ({ id }) => {
     setStatus(false)
   }
 
-  if (friend && active) {
+  if(!friendExist) {
+      return (
+        <Error error={`This page does not exist. Click button to go back to main page.`} />
+      )
+  } else if (friend && active) {
     return (
       <main className='friend-gift-page'>
         <header>
