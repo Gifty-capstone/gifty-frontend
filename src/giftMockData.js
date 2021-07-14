@@ -19,7 +19,7 @@ export const giftMockData = {
         },
         {
           "id": 3,
-          "name": "Dishwasher Chopstick Basket",
+          "name": "Chopsticks' Basket",
           "image": gift3,
         }
       ]

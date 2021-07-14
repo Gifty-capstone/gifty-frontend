@@ -24,7 +24,7 @@ const GiftList = ({ id }) => {
     });
 
   return (
-    <section className='gift-list'>
+    <section className='gift-list-container'>
       {giftCards}
     </section>
   )  

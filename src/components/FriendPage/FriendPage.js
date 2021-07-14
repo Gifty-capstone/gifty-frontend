@@ -58,7 +58,7 @@ const FriendPage = ({ id }) => {
           <h3>Add a gift idea</h3>
           {showForm && displayForm()}
         </section>
-        <section className='gift-list'>
+        <section>
           <GiftList id={id}></GiftList>
         </section>
       </main>
