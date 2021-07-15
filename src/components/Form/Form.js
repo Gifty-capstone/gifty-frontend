@@ -5,6 +5,7 @@ import { MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addFriend } from '../../actions';
+import { postFriend } from '../../utilities/apiCalls';
 
 const Form = ({ showmodal, setShowModal }) => {
   const dispatch = useDispatch();
@@ -16,17 +17,28 @@ const Form = ({ showmodal, setShowModal }) => {
 
   const handleChange = () => {
     setFriend([{
-      id: '',
-      birthday: inputDate.current.value,
       name: inputName.current.value,
+      birthday: inputDate.current.value,
       memo: inputMemo.current.value,
-      need_gift: ''
+      need_gift: true
     }])
   };
 
-  const handleSubmit = () => {
-    dispatch(addFriend(friend));
+  const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
+  };
+
+  const createNewFriend = () => {
+    postFriend(friend[0])
+      .then(data => {
+        dispatch(addFriend([data.data.attributes]))
+      })
+  };
+
+
+  const handleSubmit = () => {
+    createNewFriend();
+    clearForm();
   };
 
   return (
