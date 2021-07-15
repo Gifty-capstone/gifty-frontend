@@ -12,7 +12,7 @@ const AddFriend = () => {
   return (
     <section className='add-friend'>
       <button className='add-friend-button' onClick={openModal}>Add Friend</button>
-      <Form showModal={showModal} setShowModal={setShowModal} />
+      <Form showmodal={showModal} setShowModal={setShowModal} />
     </section>
   )
 }
