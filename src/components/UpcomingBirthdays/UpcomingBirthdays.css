@@ -2,10 +2,9 @@
   /* padding: 5%; */
   width: 25%;
   margin-left: 3%;
-  background-image: url('../../assets/pngegg.png');
-  background-position: left;
-  background-size: cover !important;
-  /* background-attachment: fixed; */
+  background-color: cadetblue;
+  border: solid black 3px;
+  border-radius: 10px;
   font-family: 'Shadows Into Light', cursive;
 }
 

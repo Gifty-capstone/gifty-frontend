@@ -37,6 +37,6 @@
 }
 
 .friend-name:hover {
-  font-size: 30px;
+  transform: scale(1.2);
   cursor:pointer;
 }
