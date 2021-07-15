@@ -20,7 +20,7 @@ const Form = ({ showmodal, setShowModal }) => {
       birthday: inputDate.current.value,
       name: inputName.current.value,
       memo: inputMemo.current.value,
-      gift: ''
+      need_gift: ''
     }])
   };
 
