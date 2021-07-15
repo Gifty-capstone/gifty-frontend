@@ -8,6 +8,10 @@
   font-family: 'Shadows Into Light', cursive;
 }
 
+.upcoming {
+  margin-left: 6%;
+}
+
 .name-area {
   list-style-type: none;
   padding-left: 10px;

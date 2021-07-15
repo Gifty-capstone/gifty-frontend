@@ -17,12 +17,12 @@ const UpcomingBirthdays = () => {
     return (
       <article key={friend.id} className='upcoming'>
         <ul className='name-area'>
-          {friend.gift === 'purchased ' &&
+          {friend.gift === 'pending ' &&
           <div className='check-area'>
             <FcCheckmark className='check' />
             <p>{friend.name}</p>
           </div>}
-          {friend.gift === 'pending ' && <li>{friend.name}</li>}
+          {friend.gift === '' && <li>{friend.name}</li>}
             <li>
               <DayJS format="MMMM-D">{friend.birthday}</DayJS>
               </li>
@@ -33,7 +33,7 @@ const UpcomingBirthdays = () => {
 
   return (
     <section className='birthdayArea'>
-      <h3>Upcoming Birthdays:</h3>
+      <h3 className='upcoming'>Upcoming Birthdays:</h3>
       {relevantBirthdays}
     </section>
   )
