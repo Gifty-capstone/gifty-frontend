@@ -9,14 +9,22 @@ import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
 import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
 import { Route, Switch } from 'react-router-dom';
+import { getFriends } from '../../apiCalls';
 
 const App = () => {
   const dispatch = useDispatch();
   const [userName, setUserName] = useState([]);
 
+  // useEffect(() => {
+  //   setUserName(mockData.data.attributes.name);
+  //   dispatch(addFriend(mockData.data.relationships.friends.data));
+  // }, [])
+
   useEffect(() => {
-    setUserName(mockData.data.attributes.name);
-    dispatch(addFriend(mockData.data.relationships.friends.data));
+    getFriends()
+      .then(data => {
+        console.log(data)
+      })
   }, [])
 
   return (
