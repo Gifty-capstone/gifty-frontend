@@ -10,6 +10,7 @@ import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
 import { Route, Switch } from 'react-router-dom';
 import { getFriends } from '../../utilities/apiCalls';
+import DayJS from 'react-dayjs';
 
 const App = () => {
   const dispatch = useDispatch();

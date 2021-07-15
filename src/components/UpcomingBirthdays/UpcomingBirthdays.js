@@ -1,6 +1,7 @@
 import './UpcomingBirthdays.css';
 import { useSelector } from 'react-redux';
 import { FcCheckmark } from 'react-icons/fc';
+import DayJS from 'react-dayjs';
 
 const UpcomingBirthdays = () => {
   const friends = useSelector(state => state.friends);
@@ -22,10 +23,9 @@ const UpcomingBirthdays = () => {
             <p>{friend.name}</p>
           </div>}
           {friend.gift === 'pending ' && <li>{friend.name}</li>}
-        </ul>
-          <ul>
-            <li>{friend.birthday.split('2021-')[1]}</li>
-            <li>Gift {friend.gift}</li>
+            <li>
+              <DayJS format="MMMM-D">{friend.birthday}</DayJS>
+              </li>
           </ul>
       </article>
     )
