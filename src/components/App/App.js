@@ -18,12 +18,20 @@ const App = () => {
   // useEffect(() => {
   //   setUserName(mockData.data.attributes.name);
   //   dispatch(addFriend(mockData.data.relationships.friends.data));
+  //   console.log(mockData.data.relationships.friends.data)
   // }, [])
 
   useEffect(() => {
     getFriends()
       .then(data => {
-        console.log(data)
+        const extractFriends = data.included.map(friend => friend.attributes);
+        setUserName(data.data.attributes.name);
+        
+        dispatch(addFriend(extractFriends));
+
+        console.log(mockData.data.relationships.friends.data)
+        console.log(extractFriends)
+
       })
   }, [])
 
