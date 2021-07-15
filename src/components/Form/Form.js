@@ -9,8 +9,7 @@ import { addFriend } from '../../actions';
 const Form = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState({});
-  //ref is very similar to state, persists between renders of the component, but does not cause the component to reupdate when it gets changed
-  //refs returns an object {current: ''} or whatever you pass as a param
+
   const inputName = useRef();
   const inputDate = useRef();
   const inputMemo = useRef();
@@ -27,7 +26,6 @@ const Form = ({ showModal, setShowModal }) => {
 
   const handleSubmit = () => {
     dispatch(addFriend(friend));
-    // Turned nodeList into an array 
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
 

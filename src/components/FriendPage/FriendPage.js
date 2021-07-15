@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { removeFriend } from '../../actions';
 import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
+import GiftList from '../GiftList/GiftList';
 
 const FriendPage = ({ id }) => {
   const dispatch = useDispatch()
@@ -56,6 +57,9 @@ const FriendPage = ({ id }) => {
           <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
           <h3>Add a gift idea</h3>
           {showForm && displayForm()}
+        </section>
+        <section>
+          <GiftList id={id}></GiftList>
         </section>
       </main>
       </React.Fragment>
