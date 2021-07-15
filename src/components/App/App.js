@@ -9,7 +9,7 @@ import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
 import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
 import { Route, Switch } from 'react-router-dom';
-import { getFriends } from '../../apiCalls';
+import { getFriends } from '../../utilities/apiCalls';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -26,12 +26,7 @@ const App = () => {
       .then(data => {
         const extractFriends = data.included.map(friend => friend.attributes);
         setUserName(data.data.attributes.name);
-        
         dispatch(addFriend(extractFriends));
-
-        console.log(mockData.data.relationships.friends.data)
-        console.log(extractFriends)
-
       })
   }, [])
 
