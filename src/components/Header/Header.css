@@ -10,17 +10,17 @@ header {
 .title {
   padding-right: 3%;
   font-family: 'Satisfy', cursive;
-  font-size: 40px;
+  font-size: 50px;
   color: #eF4823;
 }
 
 .gift {
-  height: 50px;
+  height: 75px;
 }
 
 .userName {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 20px;
   width: 50%;
   font-size: 40px;
   letter-spacing: .2em;
