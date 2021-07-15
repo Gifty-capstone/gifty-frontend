@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Friends = () => {
   const friends = useSelector(state => state.friends)
+  // console.log(friends)
   const friendList = friends.map(friend => {
     return (
       <Link to={`/${friend.id}`} className='friend' key={friend.id}>
