@@ -5,7 +5,7 @@ const Header = ({ userName }) => {
   return (
     <header>
       <h1 className='title'><img className='gift' src={gift}></img>Gifty</h1>
-      <h2 className='userName'>{user.name}'s Gift Planner</h2>
+      <h2 className='userName'>{userName}'s Gift Planner</h2>
     </header>
   )
 }

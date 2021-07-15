@@ -9,8 +9,10 @@ html, body {
   grid-template-rows: 12% 88%;
 }
 
-/* .styling-header {
-} */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .styling-content {
   height: 100%;
