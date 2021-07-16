@@ -16,12 +16,6 @@ const App = () => {
   const dispatch = useDispatch();
   const [userName, setUserName] = useState([]);
 
-  // useEffect(() => {
-  //   setUserName(mockData.data.attributes.name);
-  //   dispatch(addFriend(mockData.data.relationships.friends.data));
-  //   console.log(mockData.data.relationships.friends.data)
-  // }, [])
-
   useEffect(() => {
     getFriends()
       .then(data => {
