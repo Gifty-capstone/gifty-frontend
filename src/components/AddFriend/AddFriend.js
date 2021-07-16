@@ -13,7 +13,7 @@ const AddFriend = () => {
   return (
     <section className='add-friend'>
       <article className='add-section'>
-        <FaPlus className='fa fa-plus' onClick={openModal} style={{ fontSize: 60 }}></FaPlus>
+        <FaPlus className='fa fa-plus' onClick={openModal} style={{ fontSize: 60 }} />
         <label className='plus-label'>Add a friend</label>
       </article>
       <Form showModal={showModal} setShowModal={setShowModal} />
