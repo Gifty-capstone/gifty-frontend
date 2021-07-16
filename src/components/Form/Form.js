@@ -7,10 +7,9 @@ import { useState } from 'react';
 import { addFriend } from '../../actions';
 import { postFriend } from '../../utilities/apiCalls';
 
-const Form = ({ showmodal, setShowModal }) => {
+const Form = ({ showModal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState({});
-  // const [showmodal, setShowModal] = useState(false);
 
   const inputName = useRef();
   const inputDate = useRef();
@@ -18,12 +17,18 @@ const Form = ({ showmodal, setShowModal }) => {
 
   const handleChange = () => {
     setFriend([{
-      name: inputName.current.value,
+      id: '',
       birthday: inputDate.current.value,
+      name: inputName.current.value,
       memo: inputMemo.current.value,
-      need_gift: true
+      gift: ''
     }])
   };
+
+  // const handleSubmit = () => {
+  //   dispatch(addFriend(friend));
+  //   Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
+  // };
 
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
@@ -44,9 +49,9 @@ const Form = ({ showmodal, setShowModal }) => {
 
   return (
     <>
-      {showmodal ? (
+      {showModal ? (
         <section className='form-background'>
-          <section showmodal={'true'} className='form-wrapper'>
+          <section showModal={showModal} className='form-wrapper'>
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
               <h1>New Friend Form</h1>
