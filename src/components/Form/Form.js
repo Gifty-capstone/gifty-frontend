@@ -25,11 +25,6 @@ const Form = ({ showModal, setShowModal }) => {
     }])
   };
 
-  // const handleSubmit = () => {
-  //   dispatch(addFriend(friend));
-  //   Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
-  // };
-
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };

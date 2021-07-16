@@ -7,7 +7,6 @@ const AddFriend = () => {
   const [showModal, setShowModal] = useState(false);
 
   const openModal = () => {
-    //toggling it back and forth
     setShowModal(prev => !prev)
   }
   return (
