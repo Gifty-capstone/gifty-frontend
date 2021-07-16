@@ -11,7 +11,8 @@
   position: fixed;
   display: flex;
   justify-content: center;
-  right: 0px;
+  right: 0;
+  top: 0;
 }
 .form-wrapper {
   width: 35em;
