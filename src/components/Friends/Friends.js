@@ -9,7 +9,7 @@ const Friends = () => {
     return (
       <Link to={`/${friend.id}`} className='friend' key={friend.id}>
         <img src={getIcon(friend.id)} alt='friend avatar' className='avatar'></img>
-        <h2 className='friend-name'>{friend.name}</h2>
+        <h2 className='friend-name' id={friend.id}>{friend.name}</h2>
       </Link>
     )
   })

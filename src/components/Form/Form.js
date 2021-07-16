@@ -10,6 +10,7 @@ import { postFriend } from '../../utilities/apiCalls';
 const Form = ({ showmodal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState({});
+  // const [showmodal, setShowModal] = useState(false);
 
   const inputName = useRef();
   const inputDate = useRef();
