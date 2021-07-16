@@ -1,14 +1,27 @@
 header {
-  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
 }
 
 .title {
-  text-align: center;
-  font-size: xxx-large;
+  padding-right: 3%;
+  font-family: 'Satisfy', cursive;
+  font-size: 50px;
+  color: #eF4823;
+}
+
+.gift {
+  height: 75px;
 }
 
 .userName {
-  position: absolute;
-  top: 0;
-  left: 10px;
+  text-align: center;
+  margin-top: 20px;
+  width: 50%;
+  font-size: 40px;
+  letter-spacing: .2em;
 }

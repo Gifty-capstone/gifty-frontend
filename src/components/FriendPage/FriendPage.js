@@ -17,7 +17,7 @@ const FriendPage = ({ id }) => {
   const [friendExist, setFriendExist] = useState(true)
 
   useEffect(() => {
-    const selectedFriend = friends.find(friend => friend.id === id)
+    const selectedFriend = friends.find(friend => friend.id === parseInt(id))
     if (selectedFriend) {
     setFriend(selectedFriend)
     setFriendExist(true)

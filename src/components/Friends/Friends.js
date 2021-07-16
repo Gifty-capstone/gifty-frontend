@@ -8,16 +8,18 @@ const Friends = () => {
   const friendList = friends.map(friend => {
     return (
       <Link to={`/${friend.id}`} className='friend' key={friend.id}>
-        <img src={getIcon(friend.id)} alt='friend avatar'></img>
-        <h2>{friend.name}</h2>
+        <img src={getIcon(friend.id)} alt='friend avatar' className='avatar'></img>
+        <h2 className='friend-name' id={friend.id}>{friend.name}</h2>
       </Link>
     )
   })
 
   return (
-    <section>
-      <h1>Your Friends</h1>
-      {friendList}
+    <section className='friends'>
+      <h1 className='list-title'>Friends</h1>
+      <div className='friend-list'>
+        {friendList}
+      </div>
     </section>
   )
 }

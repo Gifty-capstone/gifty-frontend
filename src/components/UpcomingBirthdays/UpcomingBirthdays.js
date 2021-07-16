@@ -1,6 +1,7 @@
 import './UpcomingBirthdays.css';
 import { useSelector } from 'react-redux';
 import { FcCheckmark } from 'react-icons/fc';
+import DayJS from 'react-dayjs';
 
 const UpcomingBirthdays = () => {
   const friends = useSelector(state => state.friends);
@@ -14,18 +15,17 @@ const UpcomingBirthdays = () => {
   const sortedBirthdays = upcomingBirthdays.sort((a, b) => new Date(a.birthday) - new Date(b.birthday))
   const relevantBirthdays = sortedBirthdays.map(friend => {
     return (
-      <article key={friend.id}>
+      <article key={friend.id} className='upcoming'>
         <ul className='name-area'>
-          {friend.gift === 'purchased ' &&
+          {!friend.need_gift &&
           <div className='check-area'>
             <FcCheckmark className='check' />
             <p>{friend.name}</p>
           </div>}
-          {friend.gift === 'pending ' && <li>{friend.name}</li>}
-        </ul>
-          <ul>
-            <li>{friend.birthday.split('2021-')[1]}</li>
-            <li>Gift {friend.gift}</li>
+          {friend.need_gift && <li>{friend.name}</li>}
+            <li>
+              <DayJS format="MMMM-D">{friend.birthday}</DayJS>
+              </li>
           </ul>
       </article>
     )
@@ -33,7 +33,7 @@ const UpcomingBirthdays = () => {
 
   return (
     <section className='birthdayArea'>
-      <h3>Upcoming Birthdays:</h3>
+      <h3 className='upcoming'>Upcoming Birthdays:</h3>
       {relevantBirthdays}
     </section>
   )

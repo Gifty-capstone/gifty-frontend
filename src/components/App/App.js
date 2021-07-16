@@ -10,6 +10,7 @@ import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
 import { Route, Switch } from 'react-router-dom';
 import { getFriends } from '../../utilities/apiCalls';
+import DayJS from 'react-dayjs';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -31,15 +32,21 @@ const App = () => {
   }, [])
 
   return (
-    <main>
+    <main className='main'>
       <Switch>
         <Route exact path="/" render={() => {
           return (
             <React.Fragment>
-              <Header userName={userName} />
-              <UpcomingBirthdays />
-              <AddFriend />
-              <Friends />
+              <div className='styling-header'>
+                <Header userName={userName} />
+              </div>
+              <div className='styling-content'>
+                <div className ='top-half'>
+                  <UpcomingBirthdays />
+                  <AddFriend />
+                </div>
+                <Friends />
+              </div>
             </React.Fragment>
           )
         }} />
@@ -49,7 +56,7 @@ const App = () => {
           return <FriendPage id={id} />
         }} />
       </Switch>
-    </main>
+      </main>
   )
 }
 
