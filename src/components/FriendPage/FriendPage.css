@@ -4,21 +4,80 @@
 
 .friend-gift-page {
   margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .friend-info {
   width: 50%;
   display: flex;
   justify-content: space-around;
+  background-color: #BAC3BE;
+  border: solid black 3px;
+  border-radius: 10px;
 
 }
 
 .friend-details {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .top-section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.add-a-gift {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: solid black 3px;
+  padding: 1%;
+  border-radius: 10px;
+  background-color: darksalmon;
+}
+
+.add-text {
+  text-align: center;
+}
+
+.name {
+  font-size: 2.2em;
+  margin: 5% 0 2% 0;
+  font-family: 'Satisfy', cursive; 
+}
+
+.bday {
+  margin: 0;
+}
+
+.memo {
+  margin: 3%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5%;
+}
+
+.button {
+  background-color: #8AC5A4;
+  font-size: 1.4em;
+  border: solid black 2px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Zen Loop', cursive;
+  font-weight: bold;
+}
+
+.button:active {
+  transform: scale(.9);
 }
