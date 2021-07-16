@@ -47,7 +47,13 @@ const App = () => {
 
         <Route path="/:id" render={({match}) => {
           const { id } = match.params;
-          return <FriendPage id={id} />
+
+          return (
+          <>
+              <Header userName={userName} />
+              <FriendPage id={id} />
+          </>
+          )
         }} />
       </Switch>
       </main>

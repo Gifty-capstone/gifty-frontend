@@ -5,7 +5,7 @@ import gift3 from "./assets/gift3.png";
 export const giftMockData = {
   "data": [
     {
-      "id": "3211",
+      "id": "1",
       "gifts": [
         {
           "id": 1,
@@ -25,7 +25,7 @@ export const giftMockData = {
       ]
     },
     {
-      "id": "3212",
+      "id": "2",
       "gifts": [
         {
           "id": 1,
@@ -45,7 +45,7 @@ export const giftMockData = {
       ]
     },
     {
-      "id": "3213",
+      "id": "3",
       "gifts": [
         {
           "id": 1,
@@ -65,7 +65,7 @@ export const giftMockData = {
       ]
     },
     {
-      "id": "3214",
+      "id": "4",
       "gifts": [
         {
           "id": 1,
