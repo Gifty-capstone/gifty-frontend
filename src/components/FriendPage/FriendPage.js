@@ -44,24 +44,28 @@ const FriendPage = ({ id }) => {
     return (
       <React.Fragment>
       {!friendExist && <Error error={`This page does not exist. Click button to go back to main page.`} />}
-      <main className={friendExist ? 'friend-gift-page' : 'hidden'}>
-        <header>
-          <Link to={'/'}><button>Go back to home page</button></Link>
-          <img src={getIcon(id)}></img>
-          <h1>{friend.name}</h1>
-          <h2>{friend.birthday}</h2>
-          <p>{friend.memo}</p>
-          <button onClick={() => deleteFriend()}>Delete {friend.name} from friends</button>
-        </header>
-        <section className='add-a-gift'>
-          <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
-          <h3>Add a gift idea</h3>
-          {showForm && displayForm()}
-        </section>
+      <section className={friendExist ? 'friend-gift-page' : 'hidden'}>
+        <div className='top-section' >
+          <section className="friend-info">
+            <img className='avatar' src={getIcon(id)}></img>
+            <div className='friend-details'>
+              <h1>{friend.name}</h1>
+              <h2>{friend.birthday}</h2>
+              <p>{friend.memo}</p>
+              </div>
+          </section>
+          <section className='add-a-gift'>
+            <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
+            <h3>Add a gift idea</h3>
+            {showForm && displayForm()}
+          </section>
+          </div>
         <section>
           <GiftList id={id}></GiftList>
         </section>
-      </main>
+        <Link to={'/'}><button>Back to main</button></Link>
+        <button onClick={() => deleteFriend()}>Delete {friend.name}</button>
+      </section>
       </React.Fragment>
     )
     } else if (friend && !active) {
