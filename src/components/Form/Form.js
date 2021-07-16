@@ -17,11 +17,10 @@ const Form = ({ showModal, setShowModal }) => {
 
   const handleChange = () => {
     setFriend([{
-      id: '',
-      birthday: inputDate.current.value,
       name: inputName.current.value,
+      birthday: inputDate.current.value,
       memo: inputMemo.current.value,
-      gift: ''
+      need_gift: true
     }])
   };
 
