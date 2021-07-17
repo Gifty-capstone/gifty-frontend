@@ -1,36 +1,41 @@
 import './GiftList.css';
-import { giftMockData } from '../../giftMockData';
+//import { giftMockData } from '../../giftMockData';
 import { useEffect, useState } from 'react';
 import GiftCard from '../GiftCard/GiftCard';
 import { getGifts } from '../../utilities/apiCalls';
-import giftImage from '../../assets/gift3.png';
 
 const GiftList = ({ id }) => {
   const [gifts, setGifts] = useState([]);
 
   useEffect(() => {
     getGifts(1, id)
-      .then(data => setGifts(data.included))
-    // if (friendGifts) {
-    //   setGifts(friendGifts.gifts)
-    // };
-  },[gifts, id]);
+      .then(data => {
+        if (data.included) {
+          setGifts(data.included)
+        }
+      })
+  },[]);
     
   const giftCards = gifts.map(gift => {
       return (
         <GiftCard 
           title={gift.attributes.name}
-          // image={gift}
-          key={gift.attributes.id}
+          key={gift.id}
         />
       )
     });
 
-  return (
+  if (gifts.length) {
+    return (
     <section className='gift-list-container'>
       {giftCards}
     </section>
-  )  
+  )
+  } else {
+    return (
+      <p>No gifts have been added yet. Don't worry, you'll think of something!</p>
+    )
+  }
 }
 
 export default GiftList;
