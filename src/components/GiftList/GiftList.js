@@ -1,23 +1,14 @@
 import './GiftList.css';
 //import { giftMockData } from '../../giftMockData';
-import { useEffect, useState } from 'react';
 import GiftCard from '../GiftCard/GiftCard';
-import { getGifts } from '../../utilities/apiCalls';
 
-const GiftList = ({ id }) => {
-  const [gifts, setGifts] = useState([]);
-
-  useEffect(() => {
-    getGifts(1, id)
-      .then(data => setGifts(data.included)
-      )
-  },[]);
-    
-  const giftCards = gifts.map(gift => {
+const GiftList = ({ gifts }) => {
+  
+  const giftCards = gifts.map((gift, index) => {
       return (
         <GiftCard 
           title={gift.attributes.name}
-          key={gift.id}
+          key={index}
         />
       )
     });
