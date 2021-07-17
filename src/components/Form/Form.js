@@ -51,7 +51,7 @@ const Form = ({ showModal, setShowModal }) => {
               <h1>New Friend Form</h1>
               <label className='form-label'>Name:</label>
               <input type='text' className='form-name' placeholder='Full Name' onChange={handleChange} ref={inputName}></input>
-              <label className='form-label'>Birthday:</label>
+              <label className='form-label'>Birthday: (don't worry if you don't know the year, just pick the month and day)</label>
               <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
               <label className='form-label'>Notes:</label>
               <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
