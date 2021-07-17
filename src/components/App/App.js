@@ -16,10 +16,11 @@ import Error from '../Error/Error';
 const App = () => {
   const dispatch = useDispatch();
   const [userName, setUserName] = useState([]);
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
+  const [userId, setUserId] = useState(1);
 
   useEffect(() => {
-    getFriends()
+    getFriends(userId)
       .then(data => {
         const extractFriends = data.included.map(friend => friend.attributes);
         setUserName(data.data.attributes.name);
@@ -41,7 +42,7 @@ const App = () => {
               <div className='styling-content'>
                 <div className ='top-half'>
                   <UpcomingBirthdays />
-                  <AddFriend />
+                  <AddFriend userId={userId}/>
                 </div>
                 <Friends />
               </div>

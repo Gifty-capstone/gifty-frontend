@@ -1,10 +1,10 @@
-const getFriends = () => {
-  return fetch("https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends")
+const getFriends = (userId) => {
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends`)
     .then(response => checkForErrors(response))
 };
 
-const postFriend = (friend) => {
-  return fetch('https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends', {
+const postFriend = (userId, friend) => {
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends`, {
     method: 'POST',
     body: JSON.stringify({
       name: friend.name,
