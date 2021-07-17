@@ -105,4 +105,15 @@ describe('Home Page', () => {
                   .get('h2').contains('Dione Travis\'s Gift Planner')
               });
 
+              it('should show upcoming birthdays section', () => {
+                cy.get('section').eq(0)
+                  .get('h3').eq(0).contains('Upcoming Birthdays')
+              })
+
+              it('should show add friend section', () => {
+                cy.get('section').eq(1)
+                  .get('label').contains('Add a friend')
+                  .get('svg').should('have.attr', 'class', 'fa fa-plus')
+              })
+          
             });
