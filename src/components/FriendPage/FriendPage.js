@@ -8,7 +8,7 @@ import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
 import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
-import { deleteGift, getGifts } from '../../utilities/apiCalls';
+import { deleteFriendRecord, deleteGift, getGifts } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
 
 const FriendPage = ({ id }) => {
@@ -41,8 +41,12 @@ const FriendPage = ({ id }) => {
   }
 
   const deleteFriend = () => {
-    dispatch(removeFriend(friend))
-    setStatus(false)
+    deleteFriendRecord(1, id)
+      .then(data => {
+        dispatch(removeFriend(friend))
+        setStatus(false)
+      })
+      .catch(error => console.log(error))
   }
 
   const removeGift = (giftId) => {
