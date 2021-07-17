@@ -43,7 +43,7 @@ const FriendPage = ({ userId, id }) => {
   }
 
   const purchaseGift = (giftId) => {
-    markGiftPurchased(1, id, giftId )
+    markGiftPurchased(userId, id, giftId )
       .then(data => {
         const newGiftList = gifts.map(gift => {
           if (gift.id === giftId) {
@@ -55,10 +55,12 @@ const FriendPage = ({ userId, id }) => {
       }
       )
       setGifts(newGiftList)
-  })}
+    })
+    .catch(error => setError(true))
+}
 
   const deleteFriend = () => {
-    deleteFriendRecord(1, id)
+    deleteFriendRecord(userId, id)
       .then(data => {
         dispatch(removeFriend(friend))
         setStatus(false)
@@ -70,7 +72,7 @@ const FriendPage = ({ userId, id }) => {
     const updatedGifts = gifts.filter(gift => gift.id !== giftId)
     deleteGift(1, id, giftId)
       .then(data => setGifts(updatedGifts))
-      .catch(error => console.log(error))
+      .catch(error => setError(true))
   }
 
   if (friend && active) {
@@ -99,8 +101,8 @@ const FriendPage = ({ userId, id }) => {
         <section className='gift-list'>
           {!error &&
           <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList> }
-          {error && 
-          <p>Oh no, your gifts could not be retrieved. Please try again.</p>}
+          {error &&
+          <p>Oh no, something went wrong. Please refresh the page and try again.</p>}
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
