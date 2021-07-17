@@ -1,12 +1,13 @@
 import './GiftCard.css';
 import gift from '../../assets/gift1.png'
 import { FaTrash } from 'react-icons/fa';
+import { markGiftPurchased } from '../../utilities/apiCalls';
 
-const GiftCard = ({title, purchased, id, removeGift}) => {
+const GiftCard = ({title, purchased, id, removeGift, purchaseGift}) => {
 
-  // const purchaseGift = () => {
-
-  // }
+  const handlePurchase = () => {
+    purchaseGift(id)
+  }
 
   const handleTrashClick = () => {
     removeGift(id)
@@ -19,7 +20,7 @@ const GiftCard = ({title, purchased, id, removeGift}) => {
       {purchased === "purchased" && 
       <p>Purchased</p>}
       {purchased !== "purchased" &&
-      <button className="gift-card-button">Mark as purchased</button>}
+      <button onClick={handlePurchase} className="gift-card-button">Mark as purchased</button>}
       <FaTrash onClick={handleTrashClick}/>
     </section>
   )

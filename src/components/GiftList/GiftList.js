@@ -2,7 +2,7 @@ import './GiftList.css';
 //import { giftMockData } from '../../giftMockData';
 import GiftCard from '../GiftCard/GiftCard';
 
-const GiftList = ({ gifts, removeGift }) => {
+const GiftList = ({ gifts, removeGift, purchaseGift }) => {
   
   const giftCards = gifts.map((gift, index) => {
       return (
@@ -10,6 +10,7 @@ const GiftList = ({ gifts, removeGift }) => {
           title={gift.attributes.name}
           purchased={gift.attributes.status}
           id={gift.id}
+          purchaseGift={purchaseGift}
           removeGift={removeGift}
           key={index}
         />
