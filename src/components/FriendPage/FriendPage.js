@@ -10,6 +10,7 @@ import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
 import { deleteFriendRecord, deleteGift, getGifts, markGiftPurchased } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
+import { Redirect } from 'react-router-dom';
 
 const FriendPage = ({ userId, id }) => {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const FriendPage = ({ userId, id }) => {
   const [friend, setFriend] = useState({})
   const [showForm, setForm] = useState(false)
   const [active, setStatus] = useState(true)
-  const [friendExist, setFriendExist] = useState(true)
+  const [friendExists, setFriendExist] = useState(true)
   const [gifts, setGifts] = useState([])
   const [error, setError] = useState(false)
 
@@ -61,10 +62,8 @@ const FriendPage = ({ userId, id }) => {
 
   const deleteFriend = () => {
     deleteFriendRecord(userId, id)
-      .then(data => {
-        dispatch(removeFriend(friend))
-        setStatus(false)
-      })
+      .then(data => setStatus(false))
+      .then(data => dispatch(removeFriend(friend)))
       .catch(error => setError(true))
   }
 
@@ -75,11 +74,11 @@ const FriendPage = ({ userId, id }) => {
       .catch(error => setError(true))
   }
 
-  if (friend && active) {
+  if (friendExists && active) {
+    console.log(friend)
     return (
       <>
-      {!friendExist && <Error error={`This page does not exist. Click button to go back to main page.`} />}
-      <section className={friendExist ? 'friend-gift-page' : 'hidden'}>
+      <section className={'friend-gift-page'}>
         <div className='top-section' >
           <section className="friend-info">
             <img className='avatar' src={getIcon(id)}></img>
@@ -111,12 +110,13 @@ const FriendPage = ({ userId, id }) => {
       </section>
       </>
     )
-    } else if (friend && !active) {
+    } else if (!friendExists && active) {
       return (
-        <main>
-          <h1>This friend has been successfully deleted. Ouch, hope you're okay.</h1>
-          <Link to={'/'}><button>Return to main</button></Link>
-        </main>
+      <Error error={`This page does not exist. Click button to go back to main page.`} />
+      )
+    } else if (!active) {
+      return (
+      <Error error={`This friend has been deleted. Hope you're okay.`} />
       )
     }
 }

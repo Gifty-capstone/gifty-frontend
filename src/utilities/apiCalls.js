@@ -50,14 +50,12 @@ const deleteGift = (userId, friendId, giftId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}`, {
     method: 'DELETE'
   })
-    .then(response => checkForErrors(response))
 }
 
 const deleteFriendRecord = (userId, friendId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}`, {
     method: 'DELETE'
   })
-    .then(response => checkForErrors(response))
 }
 
 const checkForErrors = (response) => {
