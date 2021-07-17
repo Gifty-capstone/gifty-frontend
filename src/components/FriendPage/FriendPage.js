@@ -1,5 +1,5 @@
 import './FriendPage.css';
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
@@ -16,6 +16,9 @@ const FriendPage = ({ id }) => {
   const [showForm, setForm] = useState(false)
   const [active, setStatus] = useState(true)
   const [friendExist, setFriendExist] = useState(true)
+  const [giftIdea, setGiftIdea] = useState('')
+
+  const inputGiftIdea = useRef();
 
   useEffect(() => {
     const selectedFriend = friends.find(friend => friend.id === parseInt(id))
@@ -30,10 +33,27 @@ const FriendPage = ({ id }) => {
   const displayForm = () => {
     return (
       <form>
-        <input type='text' placeholder='Gift idea'/>
-        <button>Save idea</button>
+        <input 
+          onChange={handleChange} 
+          ref={inputGiftIdea} 
+          type='text' 
+          placeholder='Gift idea'/>
+        <button onClick={handleSubmit}>Save idea</button>
       </form>
     )
+  }
+
+  const handleChange = () => {
+    setGiftIdea(inputGiftIdea)
+  }
+
+  const handleSubmit = () => {
+    createNewGift();
+    clearForm()
+  }
+
+  const clearForm = () => {
+    setGiftIdea('')
   }
 
   const deleteFriend = () => {
@@ -53,10 +73,9 @@ const FriendPage = ({ id }) => {
               <h1 className='name'>{friend.name}</h1>
               <h2 className='bday'>
                 <DayJS format="MMMM-D">{friend.birthday}</DayJS>
-                {/* {friend.birthday} */}
               </h2>
               <p className='memo'>{friend.memo}</p>
-              </div>
+            </div>
           </section>
           <section className='add-a-gift'>
             <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
