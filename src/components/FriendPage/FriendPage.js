@@ -67,7 +67,8 @@ const FriendPage = ({ id }) => {
             <div className='friend-details'>
               <h1 className='name'>{friend.name}</h1>
               <h2 className='bday'>
-                <DayJS format="MMMM-D">{friend.birthday}</DayJS>
+                {friend.birthday &&
+                <DayJS format="MMMM-D">{friend.birthday}</DayJS> }
               </h2>
               <p className='memo'>{friend.memo}</p>
             </div>
