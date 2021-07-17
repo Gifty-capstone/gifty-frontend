@@ -9,11 +9,8 @@ const GiftList = ({ id }) => {
 
   useEffect(() => {
     getGifts(1, id)
-      .then(data => {
-        if (data.included) {
-          setGifts(data.included)
-        }
-      })
+      .then(data => setGifts(data.included)
+      )
   },[]);
     
   const giftCards = gifts.map(gift => {
