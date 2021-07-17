@@ -41,8 +41,10 @@ const addGift = (userId, friendId, gift, description, status) => {
 
 //const markGiftPurchased = (userId, friendId, gift)
 
-const deleteGift = (id) => {
-  
+const deleteGift = (userId, friendId, giftId) => {
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}`, {
+    method: 'DELETE'
+  })
 }
 
 export {

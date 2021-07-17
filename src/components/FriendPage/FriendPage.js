@@ -8,7 +8,7 @@ import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
 import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
-import { getGifts } from '../../utilities/apiCalls';
+import { deleteGift, getGifts } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
 
 const FriendPage = ({ id }) => {
@@ -45,9 +45,11 @@ const FriendPage = ({ id }) => {
     setStatus(false)
   }
 
-  const removeGift = (id) => {
-    const updatedGifts = gifts.filter(gift => gift.id !== id)
-    setGifts(updatedGifts)
+  const removeGift = (giftId) => {
+    const updatedGifts = gifts.filter(gift => gift.id !== giftId)
+    deleteGift(1, id, giftId)
+      .then(data => setGifts(updatedGifts))
+      .catch(error => console.log(error))
   }
 
   if (friend && active) {
