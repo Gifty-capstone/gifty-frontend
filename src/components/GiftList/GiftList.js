@@ -2,12 +2,15 @@ import './GiftList.css';
 //import { giftMockData } from '../../giftMockData';
 import GiftCard from '../GiftCard/GiftCard';
 
-const GiftList = ({ gifts }) => {
+const GiftList = ({ gifts, removeGift }) => {
   
   const giftCards = gifts.map((gift, index) => {
       return (
         <GiftCard 
           title={gift.attributes.name}
+          purchased={gift.attributes.status}
+          id={gift.id}
+          removeGift={removeGift}
           key={index}
         />
       )

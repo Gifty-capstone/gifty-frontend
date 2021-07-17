@@ -16,10 +16,7 @@ const GiftForm = ({ userId, friendId, addNewGift }) => {
 
   const createNewGift = () => {
     addGift(userId, friendId, giftIdea, "none", "pending")
-      .then(data => addNewGift({
-        "attributes": {
-            "name": giftIdea,
-        }}))
+      .then(data => addNewGift(data.data))
       .catch(error => console.log(error))
   }
 

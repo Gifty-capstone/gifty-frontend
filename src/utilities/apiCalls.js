@@ -36,15 +36,19 @@ const addGift = (userId, friendId, gift, description, status) => {
       "Content-Type": "application/json"
     }
   })
-    .then(response => {
-      console.log(response)
-      return response.json()
-    })
+    .then(response => response.json())
+}
+
+//const markGiftPurchased = (userId, friendId, gift)
+
+const deleteGift = (id) => {
+  
 }
 
 export {
   getFriends,
   postFriend,
   getGifts,
-  addGift
+  addGift,
+  deleteGift
 }
