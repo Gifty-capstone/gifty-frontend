@@ -1,3 +1,5 @@
+import { titleGift } from '../fixtures/srcData'
+
 describe('Home Page', () => {
       beforeEach(() => {
             cy.intercept('https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends', {
