@@ -47,8 +47,8 @@ const Form = ({ userId, showmodal, setShowModal }) => {
     <>
       {showmodal ? (
         <section className='form-background'>
-          <section 
-          // showmodal={showmodal} 
+          <section
+          // showmodal={showmodal}
           className='form-wrapper'>
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
@@ -59,15 +59,15 @@ const Form = ({ userId, showmodal, setShowModal }) => {
               <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
               <label className='form-label'>Notes:</label>
               <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
-              {error && 
+              {error &&
               <p>Something went wrong, please try again.</p>}
               <button className='form-button' onClick={handleSubmit}>Submit</button>
             </div>
-            <MdClose aria-label='Close modal' className='close-form' 
+            <MdClose aria-label='Close modal' className='close-form'
             onClick={() => setShowModal(prev => !prev)
             }/>
           </section>
-        </section> 
+        </section>
       ) : null}
     </>
   )

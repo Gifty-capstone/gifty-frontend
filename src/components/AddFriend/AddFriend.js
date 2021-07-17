@@ -15,7 +15,7 @@ const AddFriend = ({ userId }) => {
         <FaPlus className='fa fa-plus' onClick={openModal} style={{ fontSize: 60 }} />
         <label className='plus-label'>Add a friend</label>
       </article>
-      {showmodal && 
+      {showmodal &&
       <Form userId={userId} showmodal={showmodal} setShowModal={setShowModal} />}
     </section>
   )
