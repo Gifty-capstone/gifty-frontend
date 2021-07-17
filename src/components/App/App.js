@@ -56,7 +56,7 @@ const App = () => {
           return (
           <>
               <Header userName={userName} />
-              <FriendPage id={id} />
+              <FriendPage userId={userId} id={id} />
           </>
           )
         }} />
