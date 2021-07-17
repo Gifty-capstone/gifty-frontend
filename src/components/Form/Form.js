@@ -7,9 +7,10 @@ import { useState } from 'react';
 import { addFriend } from '../../actions';
 import { postFriend } from '../../utilities/apiCalls';
 
-const Form = ({ showmodal, setShowModal }) => {
+const Form = ({ userId, showmodal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState({});
+  const [error, setError] = useState(false);
 
   const inputName = useRef();
   const inputDate = useRef();
@@ -29,16 +30,17 @@ const Form = ({ showmodal, setShowModal }) => {
   };
 
   const createNewFriend = () => {
-    postFriend(friend[0])
+    postFriend(userId, friend[0])
       .then(data => {
         dispatch(addFriend([data.data.attributes]))
+        clearForm();
       })
+      .catch(error => setError(true))
   };
 
 
   const handleSubmit = () => {
     createNewFriend();
-    clearForm();
   };
 
   return (
@@ -57,6 +59,8 @@ const Form = ({ showmodal, setShowModal }) => {
               <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
               <label className='form-label'>Notes:</label>
               <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
+              {error && 
+              <p>Something went wrong, please try again.</p>}
               <button className='form-button' onClick={handleSubmit}>Submit</button>
             </div>
             <MdClose aria-label='Close modal' className='close-form' 
