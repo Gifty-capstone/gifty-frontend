@@ -15,7 +15,7 @@ import Error from '../Error/Error';
 
 const App = () => {
   const dispatch = useDispatch();
-  const [userName, setUserName] = useState([]);
+  const [userName, setUserName] = useState('');
   const [error, setError] = useState(false);
   const [userId, setUserId] = useState(1);
 
@@ -29,7 +29,7 @@ const App = () => {
       .catch(error => setError(true))
   }, [])
 
-  if (!error) {
+  if (!error && userName) {
   return (
     <main className='main'>
       <Switch>
@@ -63,6 +63,10 @@ const App = () => {
       </Switch>
       </main>
   )
+  } else if (!error && !userName) {
+    return (
+      <h2>Your gift info is on the way...</h2>
+    )
   } else {
     return (
       <Error error={'Something went wrong. Please try again.'} />
