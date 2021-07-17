@@ -39,7 +39,12 @@ const addGift = (userId, friendId, gift, description, status) => {
     .then(response => response.json())
 }
 
-//const markGiftPurchased = (userId, friendId, gift)
+const markGiftPurchased = (userId, friendId, giftId) => {
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}?status=purchased`, {
+    method: 'PUT'
+  })
+  .then(response => console.log(response))
+}
 
 const deleteGift = (userId, friendId, giftId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}`, {
@@ -58,6 +63,7 @@ export {
   postFriend,
   getGifts,
   addGift,
+  markGiftPurchased,
   deleteGift,
   deleteFriendRecord
 }

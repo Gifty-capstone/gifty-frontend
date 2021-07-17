@@ -8,7 +8,7 @@ import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
 import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
-import { deleteFriendRecord, deleteGift, getGifts } from '../../utilities/apiCalls';
+import { deleteFriendRecord, deleteGift, getGifts, markGiftPurchased } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
 
 const FriendPage = ({ id }) => {
@@ -39,6 +39,21 @@ const FriendPage = ({ id }) => {
   const addNewGift = (gift) => {
     setGifts([...gifts, gift])
   }
+
+  const purchaseGift = (giftId) => {
+    markGiftPurchased(1, id, giftId )
+      .then(data => {
+        const newGiftList = gifts.map(gift => {
+          if (gift.id === giftId) {
+            gift.attributes.status = 'purchased'
+           return gift
+          } else {
+            return gift
+          }
+      }
+      )
+      setGifts(newGiftList)
+  })}
 
   const deleteFriend = () => {
     deleteFriendRecord(1, id)
@@ -80,7 +95,7 @@ const FriendPage = ({ id }) => {
           </section>
           </div>
         <section className='gift-list'>
-          <GiftList gifts={gifts} removeGift={removeGift}></GiftList>
+          <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList>
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
