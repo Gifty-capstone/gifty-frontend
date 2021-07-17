@@ -7,6 +7,7 @@ import { removeFriend } from '../../actions';
 import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
 import GiftList from '../GiftList/GiftList';
+import GiftForm from '../GiftForm/GiftForm';
 import DayJS from 'react-dayjs';
 
 const FriendPage = ({ id }) => {
@@ -16,9 +17,9 @@ const FriendPage = ({ id }) => {
   const [showForm, setForm] = useState(false)
   const [active, setStatus] = useState(true)
   const [friendExist, setFriendExist] = useState(true)
-  const [giftIdea, setGiftIdea] = useState('')
+  const [gifts, setGifts] = useState([])
 
-  const inputGiftIdea = useRef();
+  //const inputGiftIdea = useRef();
 
   useEffect(() => {
     const selectedFriend = friends.find(friend => friend.id === parseInt(id))
@@ -30,33 +31,31 @@ const FriendPage = ({ id }) => {
   }
   }, [friends, id])
 
-  const displayForm = () => {
-    return (
-      <form>
-        <input 
-          onChange={handleChange} 
-          ref={inputGiftIdea} 
-          type='text' 
-          placeholder='Gift idea'/>
-        <button onClick={handleSubmit}>Save idea</button>
-      </form>
-    )
-  }
+  // const displayForm = () => {
+  //   return (
+  //     <form>
+  //       <input 
+  //         onChange={handleChange} 
+  //         ref={inputGiftIdea} 
+  //         type='text' 
+  //         placeholder='Gift idea'/>
+  //       <button onClick={handleSubmit}>Save idea</button>
+  //     </form>
+  //   )
+  // }
 
-  const handleChange = () => {
-    setGiftIdea(inputGiftIdea)
-  }
+  // const handleChange = () => {
+  //   setGiftIdea(inputGiftIdea)
+  // }
 
-  const handleSubmit = () => {
-    createNewGift();
-    clearForm()
-  }
+  // const handleSubmit = () => {
+  //   createNewGift();
+  //   clearForm()
+  // }
 
-  
-
-  const clearForm = () => {
-    setGiftIdea('')
-  }
+  // const clearForm = () => {
+  //   setGiftIdea('')
+  // }
 
   const deleteFriend = () => {
     dispatch(removeFriend(friend))
@@ -65,7 +64,7 @@ const FriendPage = ({ id }) => {
 
   if (friend && active) {
     return (
-      <React.Fragment>
+      <>
       {!friendExist && <Error error={`This page does not exist. Click button to go back to main page.`} />}
       <section className={friendExist ? 'friend-gift-page' : 'hidden'}>
         <div className='top-section' >
@@ -82,7 +81,7 @@ const FriendPage = ({ id }) => {
           <section className='add-a-gift'>
             <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
             <h3 className='add-text'>Add a gift idea for {friend.name}</h3>
-            {showForm && displayForm()}
+            {showForm && <GiftForm />}
           </section>
           </div>
         <section className='gift-list'>
@@ -93,7 +92,7 @@ const FriendPage = ({ id }) => {
           <button className='button' onClick={() => deleteFriend()}>Delete friend</button>
         </div>
       </section>
-      </React.Fragment>
+      </>
     )
     } else if (friend && !active) {
       return (
