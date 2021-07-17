@@ -1,4 +1,4 @@
-import { titleGift } from '../fixtures/srcData'
+import { titleGift, catPic, dogPic, foxPic } from '../fixtures/srcData'
 
 describe('Home Page', () => {
       beforeEach(() => {
@@ -115,5 +115,18 @@ describe('Home Page', () => {
                   .get('label').contains('Add a friend')
                   .get('svg').should('have.attr', 'class', 'fa fa-plus')
               })
-          
+
+              it('should show friends', () => {
+                cy.wait(1000)
+                  .get('h1').eq(1).contains('Friends')
+                  .get('img').eq(1).should('have.attr', 'src', catPic)
+                  .get('h2').eq(1).contains('Tyler')
+                  .get('img').eq(2)
+                  .should('have.attr', 'src', dogPic)
+                  .get('h2').eq(2).contains('Jack')
+                  .get('img').eq(3)
+                  .should('have.attr', 'src', foxPic)
+                  .get('h2').eq(3).contains('Sophie')
+
+              })
             });
