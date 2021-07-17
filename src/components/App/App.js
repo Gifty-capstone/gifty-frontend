@@ -30,7 +30,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" render={() => {
           return (
-            <React.Fragment>
+            <>
               <div className='styling-header'>
                 <Header userName={userName} />
               </div>
@@ -41,7 +41,7 @@ const App = () => {
                 </div>
                 <Friends />
               </div>
-            </React.Fragment>
+            </>
           )
         }} />
 

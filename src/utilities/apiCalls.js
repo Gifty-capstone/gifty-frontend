@@ -47,10 +47,17 @@ const deleteGift = (userId, friendId, giftId) => {
   })
 }
 
+const deleteFriendRecord = (userId, friendId) => {
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}`, {
+    method: 'DELETE'
+  })
+}
+
 export {
   getFriends,
   postFriend,
   getGifts,
   addGift,
-  deleteGift
+  deleteGift,
+  deleteFriendRecord
 }
