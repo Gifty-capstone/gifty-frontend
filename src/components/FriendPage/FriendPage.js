@@ -8,6 +8,7 @@ import Error from '../Error/Error';
 import { Link } from 'react-router-dom';
 import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
+import { getGifts } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
 
 const FriendPage = ({ id }) => {
@@ -19,8 +20,6 @@ const FriendPage = ({ id }) => {
   const [friendExist, setFriendExist] = useState(true)
   const [gifts, setGifts] = useState([])
 
-  //const inputGiftIdea = useRef();
-
   useEffect(() => {
     const selectedFriend = friends.find(friend => friend.id === parseInt(id))
     if (selectedFriend) {
@@ -31,31 +30,15 @@ const FriendPage = ({ id }) => {
   }
   }, [friends, id])
 
-  // const displayForm = () => {
-  //   return (
-  //     <form>
-  //       <input 
-  //         onChange={handleChange} 
-  //         ref={inputGiftIdea} 
-  //         type='text' 
-  //         placeholder='Gift idea'/>
-  //       <button onClick={handleSubmit}>Save idea</button>
-  //     </form>
-  //   )
-  // }
+  useEffect(() => {
+    getGifts(1, id)
+      .then(data => setGifts(data.included)
+      )
+  },[]);
 
-  // const handleChange = () => {
-  //   setGiftIdea(inputGiftIdea)
-  // }
-
-  // const handleSubmit = () => {
-  //   createNewGift();
-  //   clearForm()
-  // }
-
-  // const clearForm = () => {
-  //   setGiftIdea('')
-  // }
+  const addNewGift = (gift) => {
+    setGifts([...gifts, gift])
+  }
 
   const deleteFriend = () => {
     dispatch(removeFriend(friend))
@@ -81,15 +64,15 @@ const FriendPage = ({ id }) => {
           <section className='add-a-gift'>
             <i className='fas fa-plus fa-3x' onClick={() => setForm(true)}></i>
             <h3 className='add-text'>Add a gift idea for {friend.name}</h3>
-            {showForm && <GiftForm />}
+            {showForm && <GiftForm userId={1} friendId={id} addNewGift={addNewGift}/>}
           </section>
           </div>
         <section className='gift-list'>
-          <GiftList id={id}></GiftList>
+          <GiftList gifts={gifts}></GiftList>
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
-          <button className='button' onClick={() => deleteFriend()}>Delete friend</button>
+          <button className='button' onClick={deleteFriend}>Delete friend</button>
         </div>
       </section>
       </>

@@ -24,19 +24,22 @@ const getGifts = (userId, friendId) => {
     .then(response => response.json())
 }
 
-const addGift = (userId, friendId, gift) => {
+const addGift = (userId, friendId, gift, description, status) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts`, {
     method: 'POST',
     body: JSON.stringify({
       name: gift,
-      description: "None",
-      status: "pending"
+      description: description,
+      status: status
     }),
     headers: {
       "Content-Type": "application/json"
     }
   })
-    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+      return response.json()
+    })
 }
 
 export {
