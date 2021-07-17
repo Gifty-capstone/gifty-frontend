@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { addFriend } from '../../actions';
 import { postFriend } from '../../utilities/apiCalls';
 
-const Form = ({ showModal, setShowModal }) => {
+const Form = ({ showmodal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState({});
 
@@ -43,9 +43,11 @@ const Form = ({ showModal, setShowModal }) => {
 
   return (
     <>
-      {showModal ? (
+      {showmodal ? (
         <section className='form-background'>
-          <section showModal={showModal} className='form-wrapper'>
+          <section 
+          // showmodal={showmodal} 
+          className='form-wrapper'>
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
               <h1>New Friend Form</h1>
@@ -57,7 +59,9 @@ const Form = ({ showModal, setShowModal }) => {
               <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
               <button className='form-button' onClick={handleSubmit}>Submit</button>
             </div>
-            <MdClose aria-label='Close modal' className='close-form' onClick={() => setShowModal(prev => !prev)}/>
+            <MdClose aria-label='Close modal' className='close-form' 
+            onClick={() => setShowModal(prev => !prev)
+            }/>
           </section>
         </section> 
       ) : null}
