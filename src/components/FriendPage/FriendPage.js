@@ -52,6 +52,8 @@ const FriendPage = ({ id }) => {
     clearForm()
   }
 
+  
+
   const clearForm = () => {
     setGiftIdea('')
   }
