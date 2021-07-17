@@ -17,7 +17,7 @@ const GiftCard = ({title, purchased, id, removeGift, purchaseGift}) => {
     <section className="gift-card">
       <h3>{title}</h3>
       <img src={gift} alt="Gift avatar" className="gift-avatar"/>
-      {purchased === "purchased" && 
+      {purchased === "purchased" &&
       <p>Purchased</p>}
       {purchased !== "purchased" &&
       <button onClick={handlePurchase} className="gift-card-button">Mark as purchased</button>}

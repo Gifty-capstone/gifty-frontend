@@ -1,7 +1,6 @@
 import './GiftList.css';
 import GiftCard from '../GiftCard/GiftCard';
 import { getGifts } from '../../utilities/apiCalls';
-import giftImage from '../../assets/gift3.png';
 
 const GiftList = ({ gifts, removeGift, purchaseGift }) => {
 
