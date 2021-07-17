@@ -1,4 +1,4 @@
-import { titleGift, catPic, dogPic, foxPic } from '../fixtures/srcData'
+import { titleGift, catPic, dogPic, foxPic, otterPic } from '../fixtures/srcData'
 
 describe('Home Page', () => {
       beforeEach(() => {
@@ -127,6 +127,18 @@ describe('Home Page', () => {
                   .get('img').eq(3)
                   .should('have.attr', 'src', foxPic)
                   .get('h2').eq(3).contains('Sophie')
+              })
 
+              it('should show form to add friend when plus sign is clicked', () => {
+                cy.get('svg').click()
+                  .get('section')
+                  .get('img').eq(4).should('have.attr', 'src', otterPic)
+                  .get('h1').contains('New Friend Form')
+                  .get('label').contains('Name:')
+                  .get('div input[type=text]').should('have.attr', 'placeholder', 'Full Name')
+                  .get('label').contains('Birthday:')
+                  .get('div input[type=date]')
+                  .get('label').contains('Notes:')
+                  .get('div input[type=text]')
               })
             });
