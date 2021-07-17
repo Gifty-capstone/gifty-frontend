@@ -1,6 +1,6 @@
 const getFriends = () => {
   return fetch("https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends")
-    .then(response => response.json())
+    .then(response => checkForErrors(response))
 };
 
 const postFriend = (friend) => {
@@ -16,12 +16,12 @@ const postFriend = (friend) => {
       "Content-Type": "application/json"
     }
   })
-    .then(response => response.json())
+    .then(response => checkForErrors(response))
 };
 
 const getGifts = (userId, friendId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts`)
-    .then(response => response.json())
+    .then(response => checkForErrors(response))
 }
 
 const addGift = (userId, friendId, gift, description, status) => {
@@ -36,26 +36,36 @@ const addGift = (userId, friendId, gift, description, status) => {
       "Content-Type": "application/json"
     }
   })
-    .then(response => response.json())
+    .then(response => checkForErrors(response))
 }
 
 const markGiftPurchased = (userId, friendId, giftId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}?status=purchased`, {
     method: 'PUT'
   })
-  .then(response => console.log(response))
+    .then(response => checkForErrors(response))
 }
 
 const deleteGift = (userId, friendId, giftId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts/${giftId}`, {
     method: 'DELETE'
   })
+    .then(response => checkForErrors(response))
 }
 
 const deleteFriendRecord = (userId, friendId) => {
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}`, {
     method: 'DELETE'
   })
+    .then(response => checkForErrors(response))
+}
+
+const checkForErrors = (response) => {
+  if (!response.ok) {
+    throw new Error(response.status)
+  } else {
+    return response.json()
+  }
 }
 
 export {
