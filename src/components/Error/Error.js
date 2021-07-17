@@ -5,7 +5,7 @@ import './Error.css';
 const Error = ({ error }) => {
   return (
     <div className='error-area'>
-      <h1>Error: {error}</h1>
+      <h1>{error}</h1>
       <Link to={'/'}><button>Go back to home page</button></Link>
     </div>
   )
