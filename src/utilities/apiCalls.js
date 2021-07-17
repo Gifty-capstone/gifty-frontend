@@ -20,7 +20,7 @@ const postFriend = (userId, friend) => {
 };
 
 const getGifts = (userId, friendId) => {
-  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/giftsz`)
+  return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends/${friendId}/gifts`)
     .then(response => checkForErrors(response))
 }
 
