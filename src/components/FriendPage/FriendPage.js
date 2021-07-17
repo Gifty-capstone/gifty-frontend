@@ -45,6 +45,11 @@ const FriendPage = ({ id }) => {
     setStatus(false)
   }
 
+  const removeGift = (id) => {
+    const updatedGifts = gifts.filter(gift => gift.id !== id)
+    setGifts(updatedGifts)
+  }
+
   if (friend && active) {
     return (
       <>
@@ -68,7 +73,7 @@ const FriendPage = ({ id }) => {
           </section>
           </div>
         <section className='gift-list'>
-          <GiftList gifts={gifts}></GiftList>
+          <GiftList gifts={gifts} removeGift={removeGift}></GiftList>
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
