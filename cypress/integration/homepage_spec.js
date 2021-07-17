@@ -135,10 +135,20 @@ describe('Home Page', () => {
                   .get('img').eq(4).should('have.attr', 'src', otterPic)
                   .get('h1').contains('New Friend Form')
                   .get('label').contains('Name:')
-                  .get('div input[type=text]').should('have.attr', 'placeholder', 'Full Name')
+                  .get('div input[class=form-name]').should('have.attr', 'placeholder', 'Full Name')
                   .get('label').contains('Birthday:')
                   .get('div input[type=date]')
                   .get('label').contains('Notes:')
-                  .get('div input[type=text]')
+                  .get('div input[class=form-memo]')
+              })
+
+              it('should be able to type in inputs and see value updated', () => {
+                cy.get('svg').click()
+                  .get('div input[class=form-name]').type('Rachel')
+                  .should('have.value', 'Rachel')
+                  .get('div input[type=date]').type('2021-08-04')
+                  .should('have.value', '2021-08-04')
+                  .get('div input[class=form-memo]').type('Likes gardening')
+                  .should('have.value', 'Likes gardening')
               })
             });
