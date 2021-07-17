@@ -2,23 +2,26 @@ import './GiftList.css';
 import { giftMockData } from '../../giftMockData';
 import { useEffect, useState } from 'react';
 import GiftCard from '../GiftCard/GiftCard';
+import { getGifts } from '../../utilities/apiCalls';
+import giftImage from '../../assets/gift3.png';
 
 const GiftList = ({ id }) => {
   const [gifts, setGifts] = useState([]);
 
   useEffect(() => {
-    const friendGifts = giftMockData.data.find(friend => friend.id === id);
-
-    if (friendGifts) {
-      setGifts(friendGifts.gifts)
-    };
-  },[giftMockData.data, id]);
-    const giftCards = gifts.map(gift => {
+    getGifts(1, id)
+      .then(data => setGifts(data.included))
+    // if (friendGifts) {
+    //   setGifts(friendGifts.gifts)
+    // };
+  },[gifts, id]);
+    
+  const giftCards = gifts.map(gift => {
       return (
         <GiftCard 
-          title={gift.name}
-          image={gift.image}
-          key={gift.id}
+          title={gift.attributes.name}
+          // image={gift}
+          key={gift.attributes.id}
         />
       )
     });
