@@ -3,6 +3,7 @@ import { addGift } from '../../utilities/apiCalls';
 
 const GiftForm = ({ userId, friendId, addNewGift }) => {
   const [giftIdea, setGiftIdea] = useState('')
+  const [error, setError] = useState(false)
 
   const handleChange = (e) => {
     setGiftIdea(e.target.value)
@@ -17,7 +18,7 @@ const GiftForm = ({ userId, friendId, addNewGift }) => {
   const createNewGift = () => {
     addGift(userId, friendId, giftIdea, "none", "pending")
       .then(data => addNewGift(data.data))
-      .catch(error => console.log(error))
+      .catch(error => setError(true))
   }
 
   const clearInput = () => {
@@ -32,6 +33,8 @@ const GiftForm = ({ userId, friendId, addNewGift }) => {
         type='text' 
         placeholder='Gift idea'/>
       <button onClick={(e) => handleSubmit(e)}>Save idea</button>
+      {error && 
+      <p>Your gift could not be added at this time. Please try again.</p>}
     </form>
   )
 }
