@@ -11,7 +11,7 @@ import GiftForm from '../GiftForm/GiftForm';
 import { deleteFriendRecord, deleteGift, getGifts, markGiftPurchased } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
 
-const FriendPage = ({ id }) => {
+const FriendPage = ({ userId, id }) => {
   const dispatch = useDispatch()
   const friends = useSelector(state => state.friends)
   const [friend, setFriend] = useState({})
@@ -19,6 +19,7 @@ const FriendPage = ({ id }) => {
   const [active, setStatus] = useState(true)
   const [friendExist, setFriendExist] = useState(true)
   const [gifts, setGifts] = useState([])
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     const selectedFriend = friends.find(friend => friend.id === parseInt(id))
@@ -31,9 +32,10 @@ const FriendPage = ({ id }) => {
   }, [friends, id])
 
   useEffect(() => {
-    getGifts(1, id)
+    getGifts(userId, id)
       .then(data => setGifts(data.included)
       )
+      .catch(error => setError(true))
   },[]);
 
   const addNewGift = (gift) => {
@@ -61,7 +63,7 @@ const FriendPage = ({ id }) => {
         dispatch(removeFriend(friend))
         setStatus(false)
       })
-      .catch(error => console.log(error))
+      .catch(error => setError(true))
   }
 
   const removeGift = (giftId) => {
@@ -95,7 +97,10 @@ const FriendPage = ({ id }) => {
           </section>
           </div>
         <section className='gift-list'>
-          <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList>
+          {!error &&
+          <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList> }
+          {error && 
+          <p>Oh no, your gifts could not be retrieved. Please try again.</p>}
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
