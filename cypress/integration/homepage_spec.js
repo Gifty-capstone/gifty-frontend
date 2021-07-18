@@ -140,6 +140,7 @@ describe('Home Page', () => {
                   .get('div input[type=date]')
                   .get('label').contains('Notes:')
                   .get('div input[class=form-memo]')
+                  .get('button').contains('Submit')
               })
 
               it('should be able to type in inputs and see value updated', () => {
@@ -150,5 +151,37 @@ describe('Home Page', () => {
                   .should('have.value', '2021-08-04')
                   .get('div input[class=form-memo]').type('Likes gardening')
                   .should('have.value', 'Likes gardening')
+              })
+
+              // it('should be able to fill out form and see friend get added', () => {
+              //   cy.intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends', {
+              //     statusCode: 201,
+              //     body: {
+              //       name: 'Rachel',
+              //       birthday: '2021-08-04',
+              //       memo: 'Likes gardening'
+              //     }
+              //   })
+              //     .get('svg').click()
+              //     .get('div input[class=form-name]').type('Rachel')
+              //     .get('div input[type=date]').type('2021-08-04')
+              //     .get('div input[class=form-memo]').type('Likes gardening')
+              //     .get('button').click()
+              // })
+
+              it('should be able to close out of the form when you click the x button', () => {
+                cy.get('svg').click()
+                  .get('svg').eq(1).click()
+                  .get('h1').contains('Gifty')
+                  .get('img').eq(0)
+                  .should('have.attr', 'src', titleGift)
+              })
+
+              it('should redirect when individual friend is clicked', () => {
+                cy.wait(1000)
+                  .get('img').eq(1).click()
+                  .url().should('eq', 'http://localhost:3000/1')
+                  .get('img').eq(1).should('have.attr', 'src', catPic)
+                  .get('h1').contains('Tyler')
               })
             });
