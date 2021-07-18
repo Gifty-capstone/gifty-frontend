@@ -1,27 +1,66 @@
-header {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
+@media screen and (min-device-width: 320px) {
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .title {
+    padding-right: 3%;
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    color: #eF4823;
+  }
+  
+  .gift {
+    height: 35px;
+  }
+  
+  .userName {
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    font-size: 24px;
+    letter-spacing: .2em;
+    margin-left: 5px;
+  }
+  
 }
+@media screen and (min-width: 321px) {}
+@media screen and (min-width: 750px) {
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .title {
+    padding-right: 3%;
+    font-family: 'Satisfy', cursive;
+    font-size: 50px;
+    color: #eF4823;
+  }
+  
+  .gift {
+    height: 75px;
+  }
+  
+  .userName {
+    text-align: center;
+    margin-top: 20px;
+    width: 50%;
+    font-size: 40px;
+    letter-spacing: .2em;
+  }
+  
+}
+@media screen and (min-width: 900px) {}
+@media screen and (min-width: 1300px) {}
+@media screen and (min-width: 1600px) {}
 
-.title {
-  padding-right: 3%;
-  font-family: 'Satisfy', cursive;
-  font-size: 50px;
-  color: #eF4823;
-}
-
-.gift {
-  height: 75px;
-}
-
-.userName {
-  text-align: center;
-  margin-top: 20px;
-  width: 50%;
-  font-size: 40px;
-  letter-spacing: .2em;
-}
