@@ -23,9 +23,11 @@ const UpcomingBirthdays = () => {
             <p>{friend.name}</p>
           </div>}
           {friend.need_gift && <li>{friend.name}</li>}
+          {friend.birthday &&
             <li>
-              <DayJS format="MMMM-D">{friend.birthday}</DayJS>
+              <DayJS format='MMMM D'>{friend.birthday}</DayJS>
               </li>
+          }
           </ul>
       </article>
     )

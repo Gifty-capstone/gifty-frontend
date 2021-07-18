@@ -3,8 +3,8 @@ import './AddFriend.css'
 import Form from '../Form/Form.js';
 import { FaPlus } from "react-icons/fa";
 
-const AddFriend = () => {
-  const [showModal, setShowModal] = useState(false);
+const AddFriend = ({ userId }) => {
+  const [showmodal, setShowModal] = useState(false);
 
   const openModal = () => {
     setShowModal(prev => !prev)
@@ -15,7 +15,8 @@ const AddFriend = () => {
         <FaPlus className='fa fa-plus' onClick={openModal} style={{ fontSize: 60 }} />
         <label className='plus-label'>Add a friend</label>
       </article>
-      <Form showModal={showModal} setShowModal={setShowModal} />
+      {showmodal && 
+      <Form userId={userId} showmodal={showmodal} setShowModal={setShowModal} />}
     </section>
   )
 }
