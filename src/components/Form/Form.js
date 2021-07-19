@@ -38,7 +38,6 @@ const Form = ({ userId, showmodal, setShowModal }) => {
       .catch(error => setError(true))
   };
 
-
   const handleSubmit = () => {
     createNewFriend();
   };
@@ -52,10 +51,10 @@ const Form = ({ userId, showmodal, setShowModal }) => {
           className='form-wrapper'>
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
-              <h1>New Friend Form</h1>
+              <h1 className='form-title'>New Friend Form</h1>
               <label className='form-label'>Name:</label>
               <input type='text' className='form-name' placeholder='Full Name' onChange={handleChange} ref={inputName}></input>
-              <label className='form-label'>Birthday: (don't worry if you don't know the year, just pick the month and day)</label>
+              <label className='birthday-label'>Birthday: (don't worry if you don't know the year, just pick the month and day)</label>
               <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
               <label className='form-label'>Notes:</label>
               <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>

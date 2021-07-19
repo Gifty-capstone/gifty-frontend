@@ -1,85 +1,133 @@
-@media screen and (min-device-width: 320px) {}
-@media screen and (min-width: 321px) {}
-@media screen and (min-width: 750px) {}
-@media screen and (min-width: 900px) {}
-@media screen and (min-width: 1300px) {}
-@media screen and (min-width: 1600px) {}
+@media screen and (min-device-width: 320px) {
+  .form {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
 
-.form {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-.form-background {
-  width: 100%;
-  height: 100%;
-  background: rgb(0, 0, 0, 0.8);
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  right: 0;
-  top: 0;
-}
-.form-wrapper {
-  width: 35em;
-  height: 22em;
-  box-shadow: 0 5px 16px rgb(0 0 0 / 20%);
-  background: #fff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  border-radius: 10px;
-  margin-top: 5em;
-}
-.form-title {
-  font-size: 22px;
-  margin: 0;
-}
-.form-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #000;
-}
-.form-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 1.8;
-  color: #141414;
-}
-.form-name,
-.form-date,
-.form-memo {
-  margin-bottom: 5px;
-}
-.form-name {
-  width: 14em;
-}
-.form-label {
-  font-size: 14px;
-  font-weight: bold;
-}
-.form-date {
-  width: 14.3em;
-}
-.form-memo {
-  width: 14.2em;
-  height: 4em;
-}
-.form-button {
-  padding: 10px 24px;
-  background: #141414;
-  color: #fff;
-  border: none;
-  margin-top: 20px;
-}
-.close-form {
-  cursor: pointer;
-  position: absolute;
-  right: 5px;
-  width: 20px;
-  height: 32px;
-}
+  .form-background {
+    background: rgb(0, 0, 0, 0.8);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .form-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 16px rgb(0 0 0 / 20%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 22em;
+    margin-top: 5em;
+    position: relative;
+    width: 35em;
+  }
+  
+  .form-title {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .form-img {
+    background: #000;
+    border-radius: 10px 0 0 10px;
+    height: 50%;
+    margin-top: 5em;
+    width: 100%;
+  }
+
+  .form-content {
+    align-items: center;
+    display: flex;
+    color: #141414;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.8;
+  }
+
+  .form-name,
+  .form-date,
+  .form-memo {
+    margin-bottom: 5px;
+  }
+
+  .form-name {
+    width: 10em;
+  }
+
+  .form-label,
+  .birthday-label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .birthday-label {
+    margin-top: 5px;
+    width: 10em;
+  }
+
+  .form-date {
+    width: 10.3em;
+  }
+
+  .form-memo {
+    height: 4em;
+    width: 10.2em;
+  }
+
+  .form-button {
+    background: #141414;
+    border: none;
+    color: #fff;
+    margin-top: 0px;
+    padding: 10px 24px;
+  }
+
+  .close-form {
+    cursor: pointer;
+    height: 32px;
+    position: absolute;
+    right: 5px;
+    width: 20px;
+  }
+};
+
+@media screen and (min-width: 321px) {}
+@media all and (min-width: 750px) {
+  .form-wrapper {
+    height: 24em;
+  }
+  
+  .form-img {
+    height: 100%;
+    margin-top: 0;
+  }
+
+  .form-name {
+    width: 14em;
+  }
+
+  .birthday-label {
+    margin-top: 5px;
+    width: 14em;
+  }
+
+  .form-date {
+    width: 14.3em;
+  }
+
+  .form-memo {
+    height: 4em;
+    width: 14.2em;
+  }
+
+  .form-button {
+    margin-top: 20px;
+  }
+};
