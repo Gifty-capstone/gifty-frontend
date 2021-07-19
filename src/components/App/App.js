@@ -1,6 +1,6 @@
 import './App.css';
 import { useDispatch } from 'react-redux';
-import { addFriend, loadFriends } from '../../actions';
+import { addFriend } from '../../actions';
 import React, { useState, useEffect } from 'react';
 import AddFriend from '../AddFriend/AddFriend';
 import Friends from '../Friends/Friends';
@@ -25,7 +25,6 @@ const App = () => {
         const extractFriends = data.included.map(friend => friend.attributes);
         setUserName(data.data.attributes.name);
         dispatch(addFriend(extractFriends));
-        // dispatch(loadFriends(extractFriends));
       })
       .catch(error => setError(true))
   }, [])

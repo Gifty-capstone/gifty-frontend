@@ -4,12 +4,11 @@ const getFriends = (userId) => {
 };
 
 const postFriend = (userId, friend) => {
-  console.log(friend)
   return fetch(`https://gifty-backend-rails.herokuapp.com/api/v1/users/${userId}/friends`, {
     method: 'POST',
     body: JSON.stringify({
       name: friend.name,
-      birthday: friend.date,
+      birthday: friend.birthday,
       memo: friend.memo,
       need_gift: true
     }),
