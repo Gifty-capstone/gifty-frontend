@@ -1,4 +1,3 @@
-@media screen and (min-device-width: 320px) {
   header {
     align-items: center;
     display: flex;
@@ -27,9 +26,7 @@
     text-align: center;
     width: 50%;
   }
-};
 
-@media screen and (min-width: 321px) {}
 @media screen and (min-width: 750px) {
   .title {
     font-size: 50px;

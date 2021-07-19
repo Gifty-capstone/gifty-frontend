@@ -1,4 +1,4 @@
-@media screen and (min-device-width: 320px) {
+
   .add-friend {
     align-items: center;
     display: flex;
@@ -39,9 +39,7 @@
   .fa-plus:active {
     transform: scale(0.9);
   }
-};
 
-@media screen and (min-width: 321px) {}
 @media screen and (min-width: 750px) {
   .add-friend {
     height: 20em;
