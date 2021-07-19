@@ -7,6 +7,8 @@
     border-radius: 10px;
     font-family: 'Shadows Into Light', cursive;
     padding-right: 12px;
+    overflow: scroll;
+    height: 70%; 
   }
   
   .upcoming {
@@ -19,7 +21,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  
   }
   
   .check-area {
@@ -29,40 +30,11 @@
   .check {
     font-size: 30px
   }
-}
-@media screen and (min-width: 321px) {}
+};
+
 @media screen and (min-width: 750px) {
   .birthdayArea {
     width: 25%;
-    margin-left: 3%;
-    background-color: cadetblue;
-    border: solid black 3px;
-    border-radius: 10px;
-    font-family: 'Shadows Into Light', cursive;
     padding-right: 0;
   }
-  
-  .upcoming {
-    margin-left: 6%;
-  }
-  
-  .name-area {
-    list-style-type: none;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
-  }
-  
-  .check-area {
-    display: flex
-  }
-  
-  .check {
-    font-size: 30px
-  }
-}
-@media screen and (min-width: 900px) {}
-@media screen and (min-width: 1300px) {}
-@media screen and (min-width: 1600px) {}
+};
