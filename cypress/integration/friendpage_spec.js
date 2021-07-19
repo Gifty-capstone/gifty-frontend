@@ -86,6 +86,7 @@ describe('Friend Page', () => {
                     cy.wait(1000)
                       .get('h2').contains('Tyler').click()
                 })
+
                 it('should display friend page', () => {
                   cy.get('h2').eq(0).contains('Dione Travis\'s Gift Planner')
                     .get('h1').eq(0).contains('Gifty')
