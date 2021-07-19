@@ -15,13 +15,17 @@ const GiftCard = ({title, purchased, id, removeGift, purchaseGift}) => {
 
   return (
     <section className="gift-card">
-      <h3>{title}</h3>
+      <h3 className='gift-title'>{title}</h3>
       <img src={gift} alt="Gift avatar" className="gift-avatar"/>
-      {purchased === "purchased" && 
-      <p>Purchased</p>}
-      {purchased !== "purchased" &&
-      <button onClick={handlePurchase} className="gift-card-button">Mark as purchased</button>}
-      <FaTrash onClick={handleTrashClick}/>
+      <div className='bottom-row'>
+        <div className='purchase-section'>
+          {purchased === "purchased" && 
+          <p className='purchased'>Purchased</p>}
+          {purchased !== "purchased" &&
+          <button onClick={handlePurchase} className="gift-card-button">Mark as purchased</button>}
+        </div>
+        <FaTrash onClick={handleTrashClick}/>
+      </div>
     </section>
   )
 }
