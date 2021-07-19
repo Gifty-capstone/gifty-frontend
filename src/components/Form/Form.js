@@ -13,6 +13,12 @@ const initialState = {
   memo: ''
 }
 
+const initialState = {
+  name: '',
+  birthday: '',
+  memo: ''
+}
+
 const Form = ({ userId, showmodal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState(initialState);
@@ -43,7 +49,10 @@ const Form = ({ userId, showmodal, setShowModal }) => {
 
   const handleSubmit = () => {
     createNewFriend();
+<<<<<<< HEAD
     setError(false);
+=======
+>>>>>>> 42c175d... Add form errors
   };
 
   return (
