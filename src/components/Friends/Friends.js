@@ -4,7 +4,7 @@ import { getIcon } from '../../utilities/avatars';
 import { Link } from 'react-router-dom';
 
 const Friends = () => {
-  const friends = useSelector(state => state.loadFriends);
+  const friends = useSelector(state => state.friends);
   const friendList = friends.map(friend => {
     
     return (
