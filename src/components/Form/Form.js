@@ -19,13 +19,35 @@ const Form = ({ userId, showmodal, setShowModal }) => {
   const [error, setError] = useState(false);
   const [confetti, setConfetti] = useState(false);
 
+<<<<<<< HEAD
+=======
+  // const inputName = useRef();
+  // const inputDate = useRef();
+  // const inputMemo = useRef();
+
+  // const handleChange = () => {
+  //   setFriend({
+  //     name: inputName.current.value,
+  //     birthday: inputDate.current.value,
+  //     memo: inputMemo.current.value,
+  //     need_gift: true
+  //   })
+  // };
+
+>>>>>>> 7ae4c01... Refactor targeting form
   const handleChange = ({ target: {name, value} }) => {
     setFriend({
       ...friend,
       [name]:value
     })
+<<<<<<< HEAD
     setConfetti(false);
   }
+=======
+  }
+
+  console.log(friend)
+>>>>>>> 7ae4c01... Refactor targeting form
 
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
