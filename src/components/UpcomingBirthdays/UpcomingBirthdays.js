@@ -4,7 +4,7 @@ import { FcCheckmark } from 'react-icons/fc';
 import DayJS from 'react-dayjs';
 
 const UpcomingBirthdays = () => {
-  const friends = useSelector(state => state.friends);
+  const friends = useSelector(state => state.loadFriends);
 
   const upcomingBirthdays = friends.filter(friend => {
     const today = new Date();

@@ -1,7 +1,7 @@
 const loadReducer = (state = [], action) => {
   switch(action.type) {
     case 'LOAD_FRIENDS':
-      return state.push(action.payload);
+      return state.concat(action.payload.friends);
     default:
       return state;
   }
