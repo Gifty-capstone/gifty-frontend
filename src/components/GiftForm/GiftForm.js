@@ -1,5 +1,6 @@
 import React, {useState, useRef} from 'react'
 import { addGift } from '../../utilities/apiCalls';
+import './GiftForm.css';
 
 const GiftForm = ({ userId, friendId, addNewGift }) => {
   const [giftIdea, setGiftIdea] = useState('')
