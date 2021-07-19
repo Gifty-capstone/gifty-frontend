@@ -182,7 +182,6 @@ describe('Home Page', () => {
           }
         }
       })
-    })
     .get('svg').click()
     .get('div input[class=form-name]').type('Melanie')
     .get('div input[type=date]').type('2021-12-25')
@@ -205,4 +204,4 @@ cy.wait(1000)
   .get('img').eq(1).should('have.attr', 'src', catPic)
   .get('h1').contains('Tyler')
 })
-});
+})
