@@ -1,15 +1,14 @@
+  
 @media screen and (min-device-width: 320px) {
   .birthday-area {
     background-color: cadetblue;
     border: solid black 3px;
     border-radius: 10px;
     font-family: 'Shadows Into Light', cursive;
-    height: 80%;
+    height: 17em;
     margin-left: 3%;
     padding-right: 12px;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: auto;
     width: 40%;
   }
   
@@ -39,7 +38,6 @@
   .birthdayArea {
     width: 25%;
     padding-right: 0;
-    height: 98%;
     overflow: hidden;
   }
-};
+}
