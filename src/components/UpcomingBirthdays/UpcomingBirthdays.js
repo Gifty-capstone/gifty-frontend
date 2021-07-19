@@ -1,6 +1,6 @@
 import './UpcomingBirthdays.css';
 import { useSelector } from 'react-redux';
-import { FcCheckmark } from 'react-icons/fc';
+import { FaGift } from 'react-icons/fa';
 import DayJS from 'react-dayjs';
 
 const UpcomingBirthdays = () => {
@@ -23,7 +23,7 @@ const UpcomingBirthdays = () => {
         <ul className='name-area'>
           {!friend.need_gift &&
           <div className='check-area'>
-            <FcCheckmark className='check' />
+            <FaGift className='check' />
             <p>{friend.name}</p>
           </div>}
           {friend.need_gift && <li>{friend.name}</li>}

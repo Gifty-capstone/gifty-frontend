@@ -6,7 +6,7 @@ html, body {
 
 .main {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 5% 95%;
 }
 
 a {
@@ -22,7 +22,20 @@ a {
 
 .top-half {
   display: flex;
+  align-items: center;
   margin-top: 5%;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 650px) {
+  .top-half {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2%;
+    height: 30%;
+  }
 }
 
 
