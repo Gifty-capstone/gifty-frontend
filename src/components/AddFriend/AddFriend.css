@@ -17,7 +17,7 @@
   .plus-label {
     color: black;
     font-family: 'Satisfy', cursive; 
-    font-size: 40px;
+    font-size: 30px;
   }
   
   .add-section {
@@ -26,16 +26,16 @@
     border: solid black 3px;
     border-radius: 10px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
     height: 25%;
-    margin-bottom: 5em;
+    margin-top: 3em;
     padding: 5%;
     width: 65%;
   }
   
   .fa-plus {
     cursor: pointer;
-    font-size: 500px;
+    font-size: 40px;
     margin-top: 10px;
   }
   
@@ -62,6 +62,7 @@
   .add-section {
     height: 50%;
     margin-bottom: 0;
+    flex-direction: column;
   }
   
   .fa-plus {
@@ -77,4 +78,5 @@
   .fa-plus {
     font-size: 60px;
   }
+
 }

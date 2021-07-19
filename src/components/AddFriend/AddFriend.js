@@ -12,7 +12,7 @@ const AddFriend = ({ userId }) => {
   
   return (
     <section className='add-friend'>
-      <article onClick={openModal} className='add-section'>
+      <article className='add-section'>
         <FaPlus className='fa fa-plus' onClick={openModal}/>
         <label className='plus-label'>Add a friend</label>
       </article>
