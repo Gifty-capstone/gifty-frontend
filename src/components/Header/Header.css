@@ -1,18 +1,18 @@
 @media screen and (min-device-width: 320px) {
   header {
+    align-items: center;
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
     height: 100%;
+    justify-content: space-between;
     width: 100%;
   }
   
   .title {
-    padding-right: 3%;
+    color: #eF4823;
     font-family: 'Satisfy', cursive;
     font-size: 30px;
-    color: #eF4823;
+    padding-right: 3%;
   }
   
   .gift {
@@ -20,16 +20,15 @@
   }
   
   .userName {
-    text-align: center;
-    margin-top: 20px;
-    width: 50%;
     font-size: 24px;
     letter-spacing: .2em;
     margin-left: 5px;
+    margin-top: 20px;
+    text-align: center;
+    width: 50%;
   }
-  
-}
-@media screen and (min-width: 321px) {}
+};
+
 @media screen and (min-width: 750px) {
   .title {
     font-size: 50px;
@@ -42,6 +41,5 @@
   .userName {
     font-size: 40px;
   }
-  
-}
+};
 
