@@ -24,8 +24,8 @@ const App = () => {
       .then(data => {
         const extractFriends = data.included.map(friend => friend.attributes);
         setUserName(data.data.attributes.name);
-        // dispatch(addFriend(extractFriends));
-        dispatch(loadFriends(extractFriends));
+        dispatch(addFriend(extractFriends));
+        // dispatch(loadFriends(extractFriends));
       })
       .catch(error => setError(true))
   }, [])
