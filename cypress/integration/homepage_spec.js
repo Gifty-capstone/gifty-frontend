@@ -151,7 +151,8 @@ describe('Home Page', () => {
   })
 
   it('should be able to type in inputs and see value updated', () => {
-    cy.get('svg').click()
+    cy.wait(1000)
+      .get('svg').click()
       .get('div input[class=form-name]').type('Rachel')
       .should('have.value', 'Rachel')
       .get('div input[type=date]').type('2021-08-04')
@@ -182,6 +183,7 @@ describe('Home Page', () => {
           }
         }
       })
+    .wait(1000)
     .get('svg').click()
     .get('div input[class=form-name]').type('Melanie')
     .get('div input[type=date]').type('2021-12-25')
