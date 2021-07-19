@@ -152,13 +152,13 @@ describe('Home Page', () => {
 
   it('should be able to type in inputs and see value updated', () => {
     cy.wait(1000)
-      .get('svg').scrollIntoView().click({force: true})
-      .should('be.visible')
-      .get('div input[class=form-name]').scrollIntoView().type('Rachel')
+      .get('svg').click()
+      .get('div[class=form-content]').should('be.visible')
+      .get('div[class=form-content] input[class=form-name]').type('Rachel')
       .should('have.value', 'Rachel')
-      .get('div input[type=date]').scrollIntoView().type('2021-08-04')
+      .get('div[class=form-content] input[type=date]').type('2021-08-04')
       .should('have.value', '2021-08-04')
-      .get('div input[class=form-memo]').scrollIntoView().type('Likes gardening')
+      .get('div[class=form-content] input[class=form-memo]').type('Likes gardening')
       .should('have.value', 'Likes gardening')
   })
 
@@ -185,11 +185,11 @@ describe('Home Page', () => {
         }
       })
     .wait(1000)
-    .get('svg').scrollIntoView().click({force: true})
-    .should('be.visible')
-    .get('div input[class=form-name]').scrollIntoView().type('Melanie')
-    .get('div input[type=date]').scrollIntoView().type('2021-12-25')
-    .get('div input[class=form-memo]').scrollIntoView().type('Likes dogs')
+    .get('svg').click()
+    .get('div[class=form-content]').should('be.visible')
+    .get('div[class=form-content] input[class=form-name]').type('Melanie')
+    .get('div[class=form-content] input[type=date]').type('2021-12-25')
+    .get('div[class=form-content] input[class=form-memo]').type('Likes dogs')
     .get('button').click()
 })
 
