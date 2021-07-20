@@ -139,15 +139,16 @@ describe('Friend Page', () => {
         .get('i').click()
         .get('input[type=text]').type('Book')
         .get('button').contains('Save idea').click()
+        .wait(1000)
         .get('h3').eq(2).contains('Book')
         .get('img').eq(3)
         .should('have.attr', 'src', '/static/media/gift1.5b88ec3d.png')
         .get('button').eq(1).contains('Mark as purchased')
       })
-       
+
       it('should return to home page after deleting a friend', () => {
         cy.get('button').contains('Delete friend').click()
-          .wait(1000)
+          .wait(2000)
           .get('button').contains('Go back to home page').click()
           .url().should('eq', 'http://localhost:3000/')
           .get('section').eq(0)
