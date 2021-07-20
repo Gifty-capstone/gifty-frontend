@@ -28,5 +28,4 @@ const GiftCard = ({title, purchased, id, removeGift, purchaseGift}) => {
     </section>
   )
 }
-
 export default GiftCard;

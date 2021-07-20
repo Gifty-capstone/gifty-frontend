@@ -1,19 +1,10 @@
 .add-friend {
-  align-items: center;
-  display: flex;
-  height: 16em;
-  justify-content: center;
-  width: 100%;
-}
-
-  .add-friend {
-    align-items: flex-start;
-    display: flex;
-    height: 30%;
-    justify-content: center;
-    width: 100%;
-    margin-top: 0;
-    
+   align-items: flex-start;
+   display: flex;
+   height: 30%;
+   justify-content: center;
+   width: 100%;
+   margin-top: 0; 
   }
   
   .plus-label {
@@ -80,5 +71,4 @@
   .fa-plus {
     font-size: 60px;
   }
-
 }

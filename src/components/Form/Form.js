@@ -30,7 +30,6 @@ const Form = ({ userId, showmodal, setShowModal }) => {
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
-
   const createNewFriend = () => {
     postFriend(userId, friend)
       .then(data => {
@@ -45,11 +44,11 @@ const Form = ({ userId, showmodal, setShowModal }) => {
     createNewFriend();
     setError(false);
   };
-
   return (
     <>
       {showmodal ? (
         <section className='form-background'>
+
           <section 
           className='form-wrapper'>
             {confetti &&
@@ -120,7 +119,7 @@ const Form = ({ userId, showmodal, setShowModal }) => {
             onClick={() => setShowModal(prev => !prev)
             }/>
           </section>
-        </section> 
+        </section>
       ) : null}
     </>
   )
