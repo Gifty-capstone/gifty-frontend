@@ -53,7 +53,9 @@ const Form = ({ userId, showmodal, setShowModal }) => {
           <section 
           className='form-wrapper'>
             {confetti &&
-              <Confetti 
+              <Confetti
+              width={560}
+              height={445} 
               />
             }
             <img src={otters} alt='otters' className='form-img'></img>
