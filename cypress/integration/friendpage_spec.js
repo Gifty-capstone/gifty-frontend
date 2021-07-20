@@ -115,6 +115,12 @@ describe('Friend Page', () => {
           .get('p').contains('No gifts have been added yet. Don\'t worry, you\'ll think of something!')
       })
 
+      it('should delete friend', () => {
+        cy.get('button').contains('Delete friend').click()
+          .wait(1000)
+          .get('h1').contains('This friend has been deleted. Hope you\'re okay')
+        })
+
       // it('should add a gift', () => {
       //       cy.get('i').click()
       //         .intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
