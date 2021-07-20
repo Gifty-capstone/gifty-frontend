@@ -1,36 +1,41 @@
-.birthday-area {
-  background-color: cadetblue;
-  border: solid black 3px;
-  border-radius: 10px;
-  font-family: 'Shadows Into Light', cursive;
-  height: 17em;
-  margin-left: 3%;
-  padding-right: 12px;
-  overflow: auto;
-  width: 40%;
-}
+  .birthday-area {
+    background-color: cadetblue;
+    border: solid black 3px;
+    border-radius: 10px;
+    font-family: 'Shadows Into Light', cursive;
+    margin-left: 3%;
+    padding-right: 12px;
+    width: 65%;
+  }
+  
+  .upcoming {
+    margin-left: 6%;
+    font-size: 28px;
+  }
+  
+  .name-area {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 10px;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  .check-area {
+    display: flex;
+    align-items: center;
+  }
+  
+  .check {
+    font-size: 30px;
+    color: black;
+    margin-right: 10px;
+  }
 
-.upcoming {
-  margin-left: 6%;
-}
-
-.name-area {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  padding-left: 10px;
-}
-
-.check-area {
-  display: flex
-}
-
-.check {
-  font-size: 30px
-}
-
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 650px) {
   .birthdayArea {
     height: 25em;
     padding-right: 0;

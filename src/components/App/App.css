@@ -6,7 +6,7 @@ html, body {
 
 .main {
   display: grid;
-  grid-template-rows: 12% 88%;
+  grid-template-rows: 5% 95%;
 }
 
 a {
@@ -18,10 +18,29 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
 }
 
 .top-half {
   display: flex;
+  align-items: flex-start;
+  margin-top: 5%;
+  justify-content: flex-start;
+}
+
+.loading {
+  text-align: center;
+  font-size: 40px;
+}
+
+@media screen and (max-width: 650px) {
+  .top-half {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    height: 50%;
+  }
 }
 
 

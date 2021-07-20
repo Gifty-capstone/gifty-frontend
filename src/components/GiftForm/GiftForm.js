@@ -1,5 +1,6 @@
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import { addGift } from '../../utilities/apiCalls';
+import './GiftForm.css';
 
 const GiftForm = ({ userId, friendId, addNewGift }) => {
   const [giftIdea, setGiftIdea] = useState('')
@@ -32,7 +33,7 @@ const GiftForm = ({ userId, friendId, addNewGift }) => {
         value={giftIdea} 
         type='text' 
         placeholder='Gift idea'/>
-      <button onClick={(e) => handleSubmit(e)}>Save idea</button>
+      <button className='save-button' onClick={(e) => handleSubmit(e)}>Save idea</button>
       {error && 
       <p>Your gift could not be added at this time. Please try again.</p>}
     </form>

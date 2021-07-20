@@ -1,5 +1,5 @@
 import './FriendPage.css';
-import React, { useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,6 @@ import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
 import { deleteFriendRecord, deleteGift, getGifts, markGiftPurchased } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
-import { Redirect } from 'react-router-dom';
 
 const FriendPage = ({ userId, id }) => {
   const dispatch = useDispatch()
@@ -75,13 +74,12 @@ const FriendPage = ({ userId, id }) => {
   }
 
   if (friendExists && active) {
-    console.log(friend)
     return (
       <>
       <section className={'friend-gift-page'}>
         <div className='top-section' >
           <section className="friend-info">
-            <img className='avatar' src={getIcon(id)}></img>
+            <img className='avatar' alt='friend avatar' src={getIcon(id)}></img>
             <div className='friend-details'>
               <h1 className='name'>{friend.name}</h1>
               <h2 className='bday'>
@@ -101,7 +99,7 @@ const FriendPage = ({ userId, id }) => {
           {!error &&
           <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList> }
           {error &&
-          <p>Oh no, something went wrong. Please refresh the page and try again.</p>}
+          <p className='error-msg'>Oh no, something went wrong. Please refresh the page and try again.</p>}
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>
