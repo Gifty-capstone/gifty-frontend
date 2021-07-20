@@ -149,7 +149,7 @@ describe('Friend Page', () => {
       it('should return to home page after deleting a friend', () => {
         cy.get('button').contains('Delete friend').click()
           .wait(2000)
-          .get('button').contains('Go back to home page').click()
+          .get('button').contains('Back to main').click()
           .url().should('eq', 'http://localhost:3000/')
           .get('section').eq(0)
           .get('h3').eq(0).contains('Upcoming Birthdays')
