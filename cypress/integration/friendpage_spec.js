@@ -143,22 +143,17 @@ describe('Friend Page', () => {
           .get('svg').should('have.attr', 'class', 'fa fa-plus')
       })
 
-      // it('should add a gift', () => {
-      //       cy.get('i').click()
-      //         .intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
-      //             statusCode: 201,
-      //             body: {
-      //               gift: {
-      //                 attributes: {
-      //                   name: "Monopoly",
-      //                   description: "none",
-      //                   status: "pending"
-      //
-      //                   }
-      //                 }
-      //               }
-      //             })
-      //               .get('input[type=text]').type('Monopoly')
-      //               .get('button').contains('Save idea').click()
-      //             })
-              })
+      it.only('should add a gift', () => {
+        cy.intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
+            statusCode: 201,
+            body: {
+              name: "Monopoly",
+              description: "none",
+              status: "pending"
+            }
+        })
+            .get('i').click()
+            .get('input[type=text]').type('Monopoly')
+            .get('button').contains('Save idea').click()
+      })
+    })
