@@ -3,17 +3,14 @@ html, body {
   font-family: 'Zen Loop', cursive;
   letter-spacing: .1em;
 }
-
 .main {
   display: grid;
   grid-template-rows: 5% 95%;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 .styling-content {
   height: 100%;
   display: flex;
@@ -43,13 +40,8 @@ a {
   }
 }
 
-
-
 @media screen and (min-width: 750px) {
   .main {
     grid-template-rows: 12% 88%;
   }
 }
-
-
-

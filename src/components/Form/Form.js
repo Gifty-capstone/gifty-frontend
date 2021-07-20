@@ -44,26 +44,70 @@ const Form = ({ userId, showmodal, setShowModal }) => {
       {showmodal ? (
         <section className='form-background'>
           <section
-          // showmodal={showmodal}
           className='form-wrapper'>
             {confetti &&
               <Confetti
-                width={560}
-                height={450}
+              width={560}
+              height={445}
               />
             }
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
               <h1 className='form-title'>New Friend Form</h1>
               <label className='form-label'>Name:</label>
-              <input type='text' className='form-name' placeholder='Full Name' onChange={handleChange} ref={inputName}></input>
-              <label className='birthday-label'>Birthday: (don't worry if you don't know the year, just pick the month and day)</label>
-              <input type='date' className='form-date' onChange={handleChange} ref={inputDate}></input>
-              <label className='form-label'>Notes:</label>
-              <input type='text' className='form-memo' onChange={handleChange} ref={inputMemo}></input>
-              {error &&
-              <p>Something went wrong, please try again.</p>}
-              <button className='form-button' onClick={handleSubmit}>Submit</button>
+              <input
+                type='text'
+                name='name'
+                className='form-name'
+                placeholder='Full Name'
+                onChange={handleChange}>
+              </input>
+              <p
+                className='error name-error'
+                style={{visibility: error ?
+                  "visible"
+                  : "hidden"}}>
+                *Name required
+              </p>
+              <label
+                className='birthday-label'>
+                Birthday: (don't worry if you don't know the year, just pick the month and day)
+              </label>
+              <input
+                type='date'
+                name='birthday'
+                className='form-date'
+                onChange={handleChange}>
+              </input>
+              <p
+                className='error birthday-error'
+                style={{visibility: error ?
+                  "visible"
+                  : "hidden"}}>
+                *Birthday required
+              </p>
+              <label
+                className='form-label'>
+                Notes:
+              </label>
+              <input
+                type='text'
+                name='memo'
+                className='form-memo'
+                onChange={handleChange}>
+              </input>
+              <p
+                className='error post-error'
+                style={{visibility: error ?
+                  "visible"
+                  : "hidden"}}>
+                Please enter in required input fields.
+              </p>
+              <button
+                className='form-button'
+                onClick={handleSubmit}>
+                Submit
+              </button>
             </div>
             <MdClose aria-label='Close modal' className='close-form'
             onClick={() => setShowModal(prev => !prev)
