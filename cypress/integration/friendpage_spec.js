@@ -143,17 +143,28 @@ describe('Friend Page', () => {
           .get('svg').should('have.attr', 'class', 'fa fa-plus')
       })
 
-      it.only('should add a gift', () => {
+      it('should add a gift', () => {
         cy.intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
             statusCode: 201,
             body: {
-              name: "Monopoly",
-              description: "none",
-              status: "pending"
+              data: {
+                id: 50,
+                type: 'gift',
+                attributes: {
+                  name: "Book",
+                  description: "none",
+                  status: "pending"
+                }
+              }
             }
+
         })
             .get('i').click()
-            .get('input[type=text]').type('Monopoly')
+            .get('input[type=text]').type('Book')
             .get('button').contains('Save idea').click()
+            .get('h3').eq(2).contains('Book')
+            .get('img').eq(3)
+            .should('have.attr', 'src', '/static/media/gift1.5b88ec3d.png')
+            .get('button').eq(1).contains('Mark as purchased')
       })
     })
