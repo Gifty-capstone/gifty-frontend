@@ -1,45 +1,38 @@
-@media screen and (min-device-width: 320px) {
-  .birthday-area {
-    background-color: cadetblue;
-    border: solid black 3px;
-    border-radius: 10px;
-    font-family: 'Shadows Into Light', cursive;
-    height: 80%;
-    margin-left: 3%;
-    padding-right: 12px;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 40%;
-  }
-  
-  .upcoming {
-    margin-left: 6%;
-  }
-  
-  .name-area {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding-left: 10px;
-  }
-  
-  .check-area {
-    display: flex
-  }
-  
-  .check {
-    font-size: 30px
-  }
-};
+.birthday-area {
+  background-color: cadetblue;
+  border: solid black 3px;
+  border-radius: 10px;
+  font-family: 'Shadows Into Light', cursive;
+  height: 17em;
+  margin-left: 3%;
+  padding-right: 12px;
+  overflow: auto;
+  width: 40%;
+}
 
-@media screen and (min-width: 321px) {}
+.upcoming {
+  margin-left: 6%;
+}
+
+.name-area {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.check-area {
+  display: flex
+}
+
+.check {
+  font-size: 30px
+}
+
 @media screen and (min-width: 750px) {
   .birthdayArea {
-    width: 25%;
+    height: 25em;
     padding-right: 0;
-    height: 98%;
-    overflow: hidden;
   }
-};
+}
