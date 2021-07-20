@@ -121,6 +121,18 @@ describe('Friend Page', () => {
           .get('h1').contains('This friend has been deleted. Hope you\'re okay')
       })
 
+      it('should return to home page after deleting a friend', () => {
+        cy.get('button').contains('Delete friend').click()
+          .wait(1000)
+          .get('button').contains('Go back to home page').click()
+          .url().should('eq', 'http://localhost:3000/')
+          .get('section').eq(0)
+          .get('h3').eq(0).contains('Upcoming Birthdays')
+          .get('section').eq(1)
+          .get('label').contains('Add a friend')
+          .get('svg').should('have.attr', 'class', 'fa fa-plus')
+      })
+
       it('should return to home page', () => {
         cy.get('button').contains('Back to main').click()
           .url().should('eq', 'http://localhost:3000/')
