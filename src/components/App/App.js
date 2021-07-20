@@ -6,11 +6,9 @@ import AddFriend from '../AddFriend/AddFriend';
 import Friends from '../Friends/Friends';
 import Header from '../Header/Header';
 import UpcomingBirthdays from '../UpcomingBirthdays/UpcomingBirthdays';
-import { mockData } from '../../mockData';
 import FriendPage from '../FriendPage/FriendPage';
 import { Route, Switch } from 'react-router-dom';
 import { getFriends } from '../../utilities/apiCalls';
-import DayJS from 'react-dayjs';
 import Error from '../Error/Error';
 
 const App = () => {
