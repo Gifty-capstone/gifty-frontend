@@ -7,11 +7,13 @@
 }
 
   .add-friend {
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     height: 30%;
     justify-content: center;
     width: 100%;
+    margin-top: 0;
+    
   }
   
   .plus-label {

@@ -1,7 +1,6 @@
 import './GiftCard.css';
 import gift from '../../assets/gift1.png'
 import { FaTrash } from 'react-icons/fa';
-import { markGiftPurchased } from '../../utilities/apiCalls';
 
 const GiftCard = ({title, purchased, id, removeGift, purchaseGift}) => {
 
