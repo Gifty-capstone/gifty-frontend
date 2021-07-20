@@ -6,19 +6,16 @@ import { useState } from 'react';
 import { addFriend } from '../../actions';
 import { postFriend } from '../../utilities/apiCalls';
 import Confetti from 'react-confetti';
-
 const initialState = {
   name: '',
   birthday: '',
   memo: ''
 }
-
 const Form = ({ userId, showmodal, setShowModal }) => {
   const dispatch = useDispatch();
   const [friend, setFriend] = useState(initialState);
   const [error, setError] = useState(false);
   const [confetti, setConfetti] = useState(false);
-
   const handleChange = ({ target: {name, value} }) => {
     setFriend({
       ...friend,
@@ -26,11 +23,9 @@ const Form = ({ userId, showmodal, setShowModal }) => {
     })
     setConfetti(false);
   }
-
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
-
   const createNewFriend = () => {
     postFriend(userId, friend)
       .then(data => {
@@ -40,12 +35,10 @@ const Form = ({ userId, showmodal, setShowModal }) => {
       })
       .catch(error => setError(true))
   };
-
   const handleSubmit = () => {
     createNewFriend();
     setError(false);
   };
-
   return (
     <>
       {showmodal ? (
@@ -81,5 +74,4 @@ const Form = ({ userId, showmodal, setShowModal }) => {
     </>
   )
 }
-
 export default Form;
