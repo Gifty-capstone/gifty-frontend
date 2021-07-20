@@ -63,7 +63,7 @@ const App = () => {
   )
   } else if (!error && !userName) {
     return (
-      <h2>Your gift info is on the way...</h2>
+      <h2 className='loading'>Your gift info is on the way...</h2>
     )
   } else {
     return (
