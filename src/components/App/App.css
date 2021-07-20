@@ -25,3 +25,12 @@ a {
 }
 
 
+
+@media screen and (min-width: 750px) {
+  .main {
+    grid-template-rows: 12% 88%;
+  }
+}
+
+
+
