@@ -1,5 +1,5 @@
 import './FriendPage.css';
-import React, { useRef } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getIcon } from '../../utilities/avatars';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,6 @@ import GiftList from '../GiftList/GiftList';
 import GiftForm from '../GiftForm/GiftForm';
 import { deleteFriendRecord, deleteGift, getGifts, markGiftPurchased } from '../../utilities/apiCalls';
 import DayJS from 'react-dayjs';
-import { Redirect } from 'react-router-dom';
 
 const FriendPage = ({ userId, id }) => {
   const dispatch = useDispatch()
@@ -75,7 +74,6 @@ const FriendPage = ({ userId, id }) => {
   }
 
   if (friendExists && active) {
-    console.log(friend)
     return (
       <>
       <section className={'friend-gift-page'}>
