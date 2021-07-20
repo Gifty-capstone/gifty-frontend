@@ -121,6 +121,30 @@ describe('Friend Page', () => {
           .get('h1').contains('This friend has been deleted. Hope you\'re okay')
       })
 
+      it('should add a gift', () => {
+        cy.intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
+          statusCode: 201,
+          body: {
+            data: {
+              id: 50,
+              type: 'gift',
+              attributes: {
+                name: "Book",
+                description: "none",
+                status: "pending"
+              }
+            }
+          }
+        })
+        .get('i').click()
+        .get('input[type=text]').type('Book')
+        .get('button').contains('Save idea').click()
+        .get('h3').eq(2).contains('Book')
+        .get('img').eq(3)
+        .should('have.attr', 'src', '/static/media/gift1.5b88ec3d.png')
+        .get('button').eq(1).contains('Mark as purchased')
+      })
+       
       it('should return to home page after deleting a friend', () => {
         cy.get('button').contains('Delete friend').click()
           .wait(1000)
@@ -143,28 +167,4 @@ describe('Friend Page', () => {
           .get('svg').should('have.attr', 'class', 'fa fa-plus')
       })
 
-      it('should add a gift', () => {
-        cy.intercept('POST', 'https://gifty-backend-rails.herokuapp.com/api/v1/users/1/friends/1/gifts', {
-            statusCode: 201,
-            body: {
-              data: {
-                id: 50,
-                type: 'gift',
-                attributes: {
-                  name: "Book",
-                  description: "none",
-                  status: "pending"
-                }
-              }
-            }
-
-        })
-            .get('i').click()
-            .get('input[type=text]').type('Book')
-            .get('button').contains('Save idea').click()
-            .get('h3').eq(2).contains('Book')
-            .get('img').eq(3)
-            .should('have.attr', 'src', '/static/media/gift1.5b88ec3d.png')
-            .get('button').eq(1).contains('Mark as purchased')
-      })
     })
