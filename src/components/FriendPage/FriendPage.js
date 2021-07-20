@@ -79,7 +79,7 @@ const FriendPage = ({ userId, id }) => {
       <section className={'friend-gift-page'}>
         <div className='top-section' >
           <section className="friend-info">
-            <img className='avatar' src={getIcon(id)}></img>
+            <img className='avatar' alt='friend avatar' src={getIcon(id)}></img>
             <div className='friend-details'>
               <h1 className='name'>{friend.name}</h1>
               <h2 className='bday'>
