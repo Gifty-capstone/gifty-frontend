@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import { addGift } from '../../utilities/apiCalls';
 import './GiftForm.css';
 
