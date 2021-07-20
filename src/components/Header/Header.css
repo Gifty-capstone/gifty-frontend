@@ -1,4 +1,4 @@
-header {
+ header {
     align-items: center;
     display: flex;
     flex-direction: row-reverse;
@@ -7,14 +7,14 @@ header {
     width: 100%;
     margin-bottom: 5%;
   }
-
+  
   .title {
     color: #eF4823;
     font-family: 'Satisfy', cursive;
     font-size: 30px;
     padding-right: 3%;
   }
-
+  
   .gift {
     height: 35px;
   }
@@ -29,12 +29,15 @@ header {
   }
 
 @media screen and (min-width: 750px) {
+
   .title {
     font-size: 50px;
   }
+  
   .gift {
     height: 75px;
   }
+  
   .userName {
     font-size: 40px;
   }

@@ -28,13 +28,13 @@ const GiftForm = ({ userId, friendId, addNewGift }) => {
 
   return (
     <form>
-      <input
-        onChange={(e) => handleChange(e)}
-        value={giftIdea}
-        type='text'
+      <input 
+        onChange={(e) => handleChange(e)} 
+        value={giftIdea} 
+        type='text' 
         placeholder='Gift idea'/>
-      <button onClick={(e) => handleSubmit(e)}>Save idea</button>
-      {error &&
+      <button className='save-button' onClick={(e) => handleSubmit(e)}>Save idea</button>
+      {error && 
       <p>Your gift could not be added at this time. Please try again.</p>}
     </form>
   )

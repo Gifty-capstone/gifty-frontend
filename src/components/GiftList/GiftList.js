@@ -2,10 +2,10 @@ import './GiftList.css';
 import GiftCard from '../GiftCard/GiftCard';
 
 const GiftList = ({ gifts, removeGift, purchaseGift }) => {
-
+  
   const giftCards = gifts.map((gift, index) => {
       return (
-        <GiftCard
+        <GiftCard 
           title={gift.attributes.name}
           purchased={gift.attributes.status}
           id={gift.id}
@@ -21,11 +21,11 @@ const GiftList = ({ gifts, removeGift, purchaseGift }) => {
     <section className='gift-list-container'>
       {giftCards}
     </section>
-    )
+    ) 
     } else {
       return (
-        <p>No gifts have been added yet. Don't worry, you'll think of something!</p>)
-      }
+        <p className='error-msg'>No gifts have been added yet. Don't worry, you'll think of something!</p>)
+      } 
 }
 
 export default GiftList;
