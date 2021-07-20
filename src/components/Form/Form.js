@@ -1,45 +1,50 @@
 import './Form.css';
-import { useRef } from 'react';
 import otters from '../../assets/otters.png';
 import { MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addFriend } from '../../actions';
 import { postFriend } from '../../utilities/apiCalls';
+import Confetti from 'react-confetti';
+
+const initialState = {
+  name: '',
+  birthday: '',
+  memo: ''
+}
 
 const Form = ({ userId, showmodal, setShowModal }) => {
   const dispatch = useDispatch();
-  const [friend, setFriend] = useState({});
+  const [friend, setFriend] = useState(initialState);
   const [error, setError] = useState(false);
+  const [confetti, setConfetti] = useState(false);
 
-  const inputName = useRef();
-  const inputDate = useRef();
-  const inputMemo = useRef();
-
-  const handleChange = () => {
-    setFriend([{
-      name: inputName.current.value,
-      birthday: inputDate.current.value,
-      memo: inputMemo.current.value,
-      need_gift: true
-    }])
-  };
+  const handleChange = ({ target: {name, value} }) => {
+    setFriend({
+      ...friend,
+      [name]:value
+    })
+    setConfetti(false);
+  }
 
   const clearForm = () => {
     Array.from(document.querySelectorAll('input')).forEach(input => (input.value=''));
   };
 
   const createNewFriend = () => {
-    postFriend(userId, friend[0])
+    postFriend(userId, friend)
       .then(data => {
-        dispatch(addFriend([data.data.attributes]))
+        console.log(data.data)
+        dispatch(addFriend(data.data.attributes));
         clearForm();
+        setConfetti(true);
       })
       .catch(error => setError(true))
   };
 
   const handleSubmit = () => {
     createNewFriend();
+    setError(false);
   };
 
   return (
@@ -49,6 +54,12 @@ const Form = ({ userId, showmodal, setShowModal }) => {
           <section
           // showmodal={showmodal}
           className='form-wrapper'>
+            {confetti &&
+              <Confetti
+                width={560}
+                height={450}
+              />
+            }
             <img src={otters} alt='otters' className='form-img'></img>
             <div className='form-content'>
               <h1 className='form-title'>New Friend Form</h1>

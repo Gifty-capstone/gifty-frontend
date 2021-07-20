@@ -1,44 +1,43 @@
+.add-friend {
+  align-items: center;
+  display: flex;
+  height: 16em;
+  justify-content: center;
+  width: 100%;
+}
 
-  .add-friend {
-    align-items: center;
-    display: flex;
-    height: 16em;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .plus-label {
-    color: black;
-    font-family: 'Satisfy', cursive; 
-    font-size: 19px;
-  }
-  
-  .add-section {
-    align-items: center;
-    background-color: darksalmon;
-    border: solid black 3px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 25%;
-    margin-bottom: 5em;
-    padding: 5%;
-    width: 65%;
-  }
-  
-  .fa-plus {
-    cursor: pointer;
-    font-size: 20px;
-    margin-top: 10px;
-  }
-  
-  .fa-plus:hover {
-    transform: scale(1.2);
-  }
-  
-  .fa-plus:active {
-    transform: scale(0.9);
-  }
+.plus-label {
+  color: black;
+  font-family: 'Satisfy', cursive; 
+  font-size: 19px;
+}
+
+.add-section {
+  align-items: center;
+  background-color: darksalmon;
+  border: solid black 3px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  margin-bottom: 5em;
+  padding: 5%;
+  width: 65%;
+}
+
+.fa-plus {
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.fa-plus:hover {
+  transform: scale(1.2);
+}
+
+.fa-plus:active {
+  transform: scale(0.9);
+}
 
 @media screen and (min-width: 750px) {
   .add-friend {

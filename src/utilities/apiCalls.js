@@ -10,7 +10,7 @@ const postFriend = (userId, friend) => {
       name: friend.name,
       birthday: friend.birthday,
       memo: friend.memo,
-      need_gift: friend.need_gift
+      need_gift: true
     }),
     headers: {
       "Content-Type": "application/json"
