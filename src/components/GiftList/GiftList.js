@@ -24,7 +24,7 @@ const GiftList = ({ gifts, removeGift, purchaseGift }) => {
     ) 
     } else {
       return (
-        <p>No gifts have been added yet. Don't worry, you'll think of something!</p>)
+        <p className='error-msg'>No gifts have been added yet. Don't worry, you'll think of something!</p>)
       } 
 }
 

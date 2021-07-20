@@ -6,7 +6,7 @@ const Error = ({ error }) => {
   return (
     <div className='error-area'>
       <h1>{error}</h1>
-      <Link to={'/'}><button>Go back to home page</button></Link>
+      <Link to={'/'}><button className='home'>Back to main</button></Link>
     </div>
   )
 }

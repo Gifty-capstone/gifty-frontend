@@ -1,4 +1,10 @@
 .gift-list-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.error-msg {
+  text-align: center;
+  font-size: 25px;
 }
