@@ -4,3 +4,7 @@
   flex-wrap: wrap;
 }
 
+.error-msg {
+  text-align: center;
+  font-size: 25px;
+}

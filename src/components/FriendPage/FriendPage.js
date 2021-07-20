@@ -101,7 +101,7 @@ const FriendPage = ({ userId, id }) => {
           {!error &&
           <GiftList gifts={gifts} removeGift={removeGift} purchaseGift={purchaseGift}></GiftList> }
           {error &&
-          <p>Oh no, something went wrong. Please refresh the page and try again.</p>}
+          <p className='error-msg'>Oh no, something went wrong. Please refresh the page and try again.</p>}
         </section>
         <div className='buttons'>
           <Link to={'/'}><button className='button'>Back to main</button></Link>

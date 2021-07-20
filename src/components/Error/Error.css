@@ -2,4 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.home {
+  background-color: #8AC5A4;
+  font-size: 1.4em;
+  border: solid black 2px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Zen Loop', cursive;
+  font-weight: bold;
 }
