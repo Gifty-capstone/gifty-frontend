@@ -48,28 +48,14 @@ https://github.com/kendallha/go-look-at-a-tree-api
 
 ### Home Page
 
-When the application loads, the dashboard of a demo user is displayed. The dashboard shows a list of upcoming birthdays, as well as if a gift has been purchased for those birthdays.
-
-
-Desktop
-
-<img src="" width="400">
-
-
-Mobile
+When the application loads, the dashboard of a demo user is displayed. The dashboard shows a list of upcoming birthdays, as well as if a gift has been purchased for those birthdays. A complete list of friends is displayed on the main dashboard.
 
 <img src="" width="400">
 
 
 The user can add a new friend from the dash board, via a modal form.
 
-<img src="" width="400">
-
-
-An complete list of friends is displayed on the main dashboard.
-
-<img src="" width="400">
-
+<img src="https://media.giphy.com/media/xCPXj6j3sLmZ0QgjBr/giphy.gif" width="400">
 
 By clicking on any friend's name, the user can visit their specific gift page to view details about that friend.
 
@@ -78,6 +64,10 @@ By clicking on any friend's name, the user can visit their specific gift page to
 On this page, the user can add, delete, or mark any gift as purchased.
 
 <img src="" width="400">
+
+## Wireframes
+
+<img src="" width="
 
 ## Learning Goals
 
