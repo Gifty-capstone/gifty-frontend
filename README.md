@@ -11,7 +11,7 @@
 
  - This was the capstone project for the [Turing School of Software and Design](www.turing.edu).  We worked in a team of front and back end engineers to complete a full stack application over the course of two weeks.
 
- - Our team utilized Agile methodologies and a git rebase workflow to collaborate on Gifty, an application to keep track of dates and gift ideas for friends' birthdays.
+ - Our team utilized Agile methodologies and a git rebase workflow to collaborate on Gifty, an application to keep track of dates and gift ideas for friends' birthdays. We have all had the experience of shopping last-minute for a birthday gift you forgot to purchase, and settling on something less-than-stellar for an amazing friend. With Gifty, you'll never spend the day before a birthday desperately browsing Amazon again. 
 
 ### Deploy Link
 
@@ -50,24 +50,24 @@ https://github.com/kendallha/go-look-at-a-tree-api
 
 When the application loads, the dashboard of a demo user is displayed. The dashboard shows a list of upcoming birthdays, as well as if a gift has been purchased for those birthdays. A complete list of friends is displayed on the main dashboard.
 
-<img src="" width="400">
+<img src="https://user-images.githubusercontent.com/25498241/126571156-f74af2e9-d718-416d-862d-c0521c08e61a.png" width="600">
 
 
 The user can add a new friend from the dash board, via a modal form.
 
-<img src="https://media.giphy.com/media/xCPXj6j3sLmZ0QgjBr/giphy.gif" width="400">
+<img src="https://media.giphy.com/media/xCPXj6j3sLmZ0QgjBr/giphy.gif" width="600">
 
 By clicking on any friend's name, the user can visit their specific gift page to view details about that friend.
 
-<img src="" width="400">
-
 On this page, the user can add, delete, or mark any gift as purchased.
 
-<img src="" width="400">
+<img src="https://media.giphy.com/media/iEPFxFZWS0lCVeAnWa/giphy.gif" width="600">
 
 ## Wireframes
 
-<img src="" width="
+<img src="https://user-images.githubusercontent.com/25498241/126570992-9a49b4fa-538f-4989-b110-01140dc3ba55.png" width="400">
+<img src="https://user-images.githubusercontent.com/25498241/126571034-e84a10cc-d630-42b9-9778-2b61a8eb37f4.png" width="400">
+<img src="https://user-images.githubusercontent.com/25498241/126571053-f5e9bdd0-983b-4eef-8e0d-ef8f5934295d.png" width="400">
 
 ## Learning Goals
 
